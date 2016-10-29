@@ -1,0 +1,23 @@
+Bibliography
+=============
+
+
+.. glossary::
+    :sorted:
+
+    Kwiatkowski_2008_PCCP
+        | *Kwiatkowski, J. J. and Nelson, J. and Li, H. and Bredas, J. L. and Wenzel, W. and Lennartz, C.*
+        | `Simulating charge transport in tris(8-hydroxyquinoline) aluminium (Alq3) <http://www.rsc.org/publishing/journals/CP/article.asp?doi=b719592c>`_ 
+        | PCCP, **2008**, 10, 1852 
+
+    Kwiatkowski_2009_NanoLetters 
+        | *Kwiatkowski, J.J. and Frost, J.M. and Nelson, J.*
+        | `The Effect of Morphology on Electron Field-Effect Mobility in Disordered C60 Thin Films <http://pubs.acs.org/doi/abs/10.1021/nl803504q>`_
+        | Nano Letters, **2009**, 9, 1085
+
+    Kwiatkowski_2008_thesis
+        | *Kwiatkowski, J.J.*
+        | `From molecules to mobilities: modelling charge transport in organic semiconductors <http://joekwiatkowski.name/thesis>`_
+
+
+ 

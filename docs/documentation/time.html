@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>1.6. Time in ToFeT &mdash; ToFeT v2.1.83 documentation</title>
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.1.83',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="ToFeT v2.1.83 documentation" href="../index.html" />
+    <link rel="up" title="1. Documentation" href="documentation.html" />
+    <link rel="next" title="1.7. Calculating mobilities" href="calculating_mobilities.html" />
+    <link rel="prev" title="1.5.3. The ‘sim’ file" href="sim_file.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../modindex.html" title="Global Module Index"
+             accesskey="M">modules</a> |</li>
+        <li class="right" >
+          <a href="calculating_mobilities.html" title="1.7. Calculating mobilities"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="sim_file.html" title="1.5.3. The ‘sim’ file"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">ToFeT v2.1.83 documentation</a> &raquo;</li>
+          <li><a href="../master_toc.html" >5. Full table of contents</a> &raquo;</li>
+          <li><a href="documentation.html" accesskey="U">1. Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/Alq3_filaments_small.png" alt="Logo"/>
+            </a></p>
+            <h3><a href="../index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="">1.6. Time in ToFeT</a><ul>
+<li><a class="reference external" href="#storing-photocurrent-transients">1.6.1. Storing photocurrent transients</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="sim_file.html"
+                                  title="previous chapter">1.5.3. The &#8216;sim&#8217; file</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="calculating_mobilities.html"
+                                  title="next chapter">1.7. Calculating mobilities</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="../_sources/documentation/time.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="../search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="time-in-tofet">
+<span id="sec-time"></span><h1>1.6. Time in ToFeT<a class="headerlink" href="#time-in-tofet" title="Permalink to this headline">¶</a></h1>
+<p>Since ToFeT is a kinetic Monte Carlo code, it treats time physically.
+The simulation parameter <a title="maxTime" class="reference external" href="../reference/sim_parameters.html#maxTime"><tt class="xref docutils literal"><span class="pre">maxTime</span></tt></a> determines the maximum time a simulation should run for: the simulation may converge and finish before <a title="maxTime" class="reference external" href="../reference/sim_parameters.html#maxTime"><tt class="xref docutils literal"><span class="pre">maxTime</span></tt></a>, but it will never run longer.</p>
+<div class="section" id="storing-photocurrent-transients">
+<span id="sec-photocurrent-bins"></span><h2>1.6.1. Storing photocurrent transients<a class="headerlink" href="#storing-photocurrent-transients" title="Permalink to this headline">¶</a></h2>
+<p>Photocurrent transients are best stored in time-bins which increase in size geometrically, so that events that happen on a short time scale are stored with greater resolution than those that happen on long time scales.
+The simulation parameters <a title="deltaTime" class="reference external" href="../reference/sim_parameters.html#deltaTime"><tt class="xref docutils literal"><span class="pre">deltaTime</span></tt></a> and <a title="alpha" class="reference external" href="../reference/sim_parameters.html#alpha"><tt class="xref docutils literal"><span class="pre">alpha</span></tt></a> determine the size and progression of these time bins.
+The i<sup>th</sup> bin B<sub>i</sub> is between times:</p>
+<div class="math">
+<p><img src="../_images/math/80a5cf0487ec6634074cac05d36cb1bc2ce026a0.png" alt="\text{deltaTime} \times \text{alpha}^{i-1} \leq B_i &lt; \text{deltaTime} \times \text{alpha}^{i}" />
+</div></p><p>up to the maximum time <a title="maxTime" class="reference external" href="../reference/sim_parameters.html#maxTime"><tt class="xref docutils literal"><span class="pre">maxTime</span></tt></a>.
+Thus, for fine resolution at small times, and coarser resolution at large times, pick a large <a title="alpha" class="reference external" href="../reference/sim_parameters.html#alpha"><tt class="xref docutils literal"><span class="pre">alpha</span></tt></a>.
+For finer resolution across all timescales, decrease <a title="deltaTime" class="reference external" href="../reference/sim_parameters.html#deltaTime"><tt class="xref docutils literal"><span class="pre">deltaTime</span></tt></a>.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../modindex.html" title="Global Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="calculating_mobilities.html" title="1.7. Calculating mobilities"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="sim_file.html" title="1.5.3. The ‘sim’ file"
+             >previous</a> |</li>
+        <li><a href="../index.html">ToFeT v2.1.83 documentation</a> &raquo;</li>
+          <li><a href="../master_toc.html" >5. Full table of contents</a> &raquo;</li>
+          <li><a href="documentation.html" >1. Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2009, Joe Kwiatkowski.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.1.
+    </div>
+  </body>
+</html>

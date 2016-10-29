@@ -1,0 +1,5 @@
+********************************
+Credits, and how to cite ToFeT
+********************************
+
+.. literalinclude:: ../../CREDITS.txt

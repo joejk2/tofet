@@ -1,0 +1,2 @@
+.. automodule:: tft_make_cubic_lattice
+    :synopsis: Make a very simple cubic lattice suitable for input to ToFeT.

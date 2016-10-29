@@ -1,0 +1,2 @@
+.. automodule:: tft_extract
+    :synopsis: Extract data from ToFeT output files.

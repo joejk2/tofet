@@ -1,0 +1,4 @@
+COPYING.LESSER 
+==============
+
+.. literalinclude:: ../../COPYING.LESSER

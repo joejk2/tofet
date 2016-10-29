@@ -1,0 +1,17 @@
+Documentation
+=============
+
+.. toctree::
+    :maxdepth: 2
+
+    about_tofet
+    warnings
+    download
+    INSTALL
+    input_files
+    time 
+    calculating_mobilities
+    /examples/examples
+    faqs 
+    rngs
+

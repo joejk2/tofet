@@ -1,0 +1,5 @@
+:mod:`tft_average_xy.py`
+-------------------------
+
+.. automodule:: tft_average_xy
+    :synopsis: Average a 4d dataset over the xy plane 

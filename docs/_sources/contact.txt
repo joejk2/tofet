@@ -1,0 +1,14 @@
+*******
+Contact
+******* 
+
+
+.. toctree:: 
+    :hidden:
+
+    CREDITS
+    COPYING
+    COPYING.LESSER
+
+.. image:: /images/email.png
+

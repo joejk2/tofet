@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>1.7. Calculating mobilities &mdash; ToFeT v2.1.83 documentation</title>
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.1.83',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="ToFeT v2.1.83 documentation" href="../index.html" />
+    <link rel="up" title="1. Documentation" href="documentation.html" />
+    <link rel="next" title="2. Examples" href="../examples/examples.html" />
+    <link rel="prev" title="1.6. Time in ToFeT" href="time.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../modindex.html" title="Global Module Index"
+             accesskey="M">modules</a> |</li>
+        <li class="right" >
+          <a href="../examples/examples.html" title="2. Examples"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="time.html" title="1.6. Time in ToFeT"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">ToFeT v2.1.83 documentation</a> &raquo;</li>
+          <li><a href="../master_toc.html" >5. Full table of contents</a> &raquo;</li>
+          <li><a href="documentation.html" accesskey="U">1. Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/Alq3_filaments_small.png" alt="Logo"/>
+            </a></p>
+            <h3><a href="../index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="">1.7. Calculating mobilities</a><ul>
+<li><a class="reference external" href="#mobilities-from-average-velocity">1.7.1. Mobilities from average velocity</a><ul>
+<li><a class="reference external" href="#convergence">1.7.1.1. Convergence</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#mobilities-from-average-displacement">1.7.2. Mobilities from average displacement</a></li>
+<li><a class="reference external" href="#field-effect-mobilities">1.7.3. Field-effect mobilities</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="time.html"
+                                  title="previous chapter">1.6. Time in ToFeT</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="../examples/examples.html"
+                                  title="next chapter">2. Examples</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="../_sources/documentation/calculating_mobilities.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="../search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="calculating-mobilities">
+<span id="sec-mu"></span><h1>1.7. Calculating mobilities<a class="headerlink" href="#calculating-mobilities" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="mobilities-from-average-velocity">
+<span id="sec-velocity-mu"></span><h2>1.7.1. Mobilities from average velocity<a class="headerlink" href="#mobilities-from-average-velocity" title="Permalink to this headline">¶</a></h2>
+<p>As each charge is collected, it&#8217;s velocity in the direction of <a title="fieldZ" class="reference external" href="../reference/sim_parameters.html#fieldZ"><tt class="xref docutils literal"><span class="pre">fieldZ</span></tt></a> is calculated.  The mobility is calculated from the average velocity.  Charges that aren&#8217;t collected don&#8217;t contribute to the mobility:</p>
+<div class="math">
+<p><img src="../_images/math/45268e9b5c1394ec10c71254f399c3cb66638bb0.png" alt="\mu = \frac{L}{F} \cdot \left&lt; \frac{1}{t} \right&gt;_{collected hoppers}" />
+</div></p><p>where <em>L</em> is the depth of the film along the Z-axis, <em>F</em> is the field and <em>t</em> is the time at which a hopper is collected.</p>
+<p>This mobility is labelled as <tt class="docutils literal"><span class="pre">MOBILITY</span> <span class="pre">FROM</span> <span class="pre">COLLECTION</span> <span class="pre">TIMES</span></tt> in ToFeT&#8217;s output.</p>
+<div class="section" id="convergence">
+<span id="sec-convergence"></span><h3>1.7.1.1. Convergence<a class="headerlink" href="#convergence" title="Permalink to this headline">¶</a></h3>
+<p>ToFeT uses the <a class="reference internal" href="#sec-velocity-mu"><em>Mobilities from average velocity</em></a> to determine when the simulation has converged (as defined by <a title="tol" class="reference external" href="../reference/sim_parameters.html#tol"><tt class="xref docutils literal"><span class="pre">tol</span></tt></a>).
+If <a title="maxTime" class="reference external" href="../reference/sim_parameters.html#maxTime"><tt class="xref docutils literal"><span class="pre">maxTime</span></tt></a> isn&#8217;t sufficiently large and some charges aren&#8217;t being collected, or if the mobility isn&#8217;t well converged from all <a class="reference external" href="../reference/glossary.html#term-run"><em class="xref">runs</em></a>, ToFeT will issue warnings.
+Depending on these warnings, <a title="maxTime" class="reference external" href="../reference/sim_parameters.html#maxTime"><tt class="xref docutils literal"><span class="pre">maxTime</span></tt></a> or <a title="maxRuns" class="reference external" href="../reference/sim_parameters.html#maxRuns"><tt class="xref docutils literal"><span class="pre">maxRuns</span></tt></a> should be increased.
+Alternatively, <a title="tol" class="reference external" href="../reference/sim_parameters.html#tol"><tt class="xref docutils literal"><span class="pre">tol</span></tt></a> could also be increased.</p>
+</div>
+</div>
+<div class="section" id="mobilities-from-average-displacement">
+<span id="sec-displacement-mu"></span><h2>1.7.2. Mobilities from average displacement<a class="headerlink" href="#mobilities-from-average-displacement" title="Permalink to this headline">¶</a></h2>
+<p>The aggregate distance moved by all charges along the field is used to calculate a velocity, and hence mobility.  All charges, even those that aren&#8217;t collected, contribute to this value.</p>
+<div class="math">
+<p><img src="../_images/math/64d26b8b2790cc133001f14d4e62f886855c5e7a.png" alt="\mu = \frac{1}{T \cdot F} \left&lt; \Delta Z \right&gt;_{all hoppers}" />
+</div></p><p>where <em>Delta Z</em> is the total distance moved by a hopper along the Z-axis, and <em>T</em> is the total time of the simulation (aggregated over all runs).</p>
+<p>This mobility is labelled as <tt class="docutils literal"><span class="pre">MOBILITY</span> <span class="pre">FROM</span> <span class="pre">TOTAL</span> <span class="pre">DISPLACEMENT</span> <span class="pre">AND</span> <span class="pre">TOTAL</span> <span class="pre">TIME</span></tt> in ToFeT&#8217;s output.</p>
+</div>
+<div class="section" id="field-effect-mobilities">
+<h2>1.7.3. Field-effect mobilities<a class="headerlink" href="#field-effect-mobilities" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">To be written....   Give me a <a class="reference external" href="../contact.html"><em>kick</em></a>.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../modindex.html" title="Global Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../examples/examples.html" title="2. Examples"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="time.html" title="1.6. Time in ToFeT"
+             >previous</a> |</li>
+        <li><a href="../index.html">ToFeT v2.1.83 documentation</a> &raquo;</li>
+          <li><a href="../master_toc.html" >5. Full table of contents</a> &raquo;</li>
+          <li><a href="documentation.html" >1. Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2009, Joe Kwiatkowski.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.1.
+    </div>
+  </body>
+</html>

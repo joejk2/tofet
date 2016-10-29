@@ -1,0 +1,30 @@
+
+.. _sec:rngs:
+
+Random number generators
+==========================
+
+GSL
+^^^
+
+Compile with: ``make``
+
+It is preferable to use the GSL random number generator `GSL <http://www.gnu.org/software/gsl/>`_ because of the flexibility it affords.
+By default, the generator always uses the same seed in the simulations; this means you'll always get the same result every time you run the simulation.
+If you want unique simulations, you can modify the seed by setting the environment variable :envvar:`GSL_RNG_SEED`.
+For example, in a Linux environment, you might type::
+
+    GSL_RNG_SEED=$RANDOM  tft  foo.sim  bar.xyz  foobar.edge
+
+By default, the generation algorithm is the MT19937 Mersenne Twister.
+For details of how to change this and other settings, refer to the GSL documentation.
+
+RandomB
+^^^^^^^^
+
+Compile with: ``make randomB``
+
+ToFeT is packaged with its own random number generator (kindly supplied by Rosie Chandler) in case you haven't got the GSL installed.
+However, full support hasn't yet been added for this generator.
+In particular, if you want a random seed rather than the default, you'll need to edit the appropriate lines in :file:`trunk/source/RandomB.cc` and recompile.
+

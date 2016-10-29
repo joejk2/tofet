@@ -1,0 +1,47 @@
+Field-effect transistor simulations
+==========================================
+:file:`trunk/examples/GSL_randomGenerator/fet/`
+
+.. warning:: 
+    Documentation incomplete
+    Give me a :doc:`kick </contact>`, and I'll fill this section in.
+
+..
+    \subsubsection{Files}
+    \begin{center}
+	% use packages: array
+	\begin{tabular}[!h]{|c|c|}
+	Filename & Description  \\
+	\hline
+	\verb!fet.sim! & Simulation parameters \\
+	\verb!scl_fet.xyz! & Morphology and site energies \\
+	\verb!scl_fet.edge! & Neighbouring pairs and transfer integrals \\
+	\verb!occupiedMolecules.occ! & A list of occupied molecules\\
+	\verb!fet*.out! & Sample output files\\
+	\verb!mu_sat.dat! & The calculated saturated field-mobility\\
+	\end{tabular}
+	\end{center}
+	\subsubsection{Running}
+	\begin{verbatim}
+	ToFeT.py fet.sim scl_fet.xyz scl_fet.edge occupiedMolecules.occ;
+	calculateSaturatedMobility.py fet*.out -l 990 -w 40
+	\end{verbatim}
+
+..
+    At the end of every simulation, the file \verb!occupiedMolecules.occ! is updated with the list of all molecules that where occupied by charges.
+    This is used be the next simulation to speed up convergence.
+
+..
+    To get a good value for the saturated mobility \verb!Vg! must vary over a wide range (within the saturated regime).
+..
+    \subsubsection{Warnings}
+    If \verb!Vg! is too small (usually negative), ToFeT may seg-fault.
+    I'll fix this one day...
+
+
+.. figure:: /images/output_fitted.*
+    :align: center        
+
+    *Output curves from C60 field-effect transistor simulations.
+    Taken from reference* :term:`Kwiatkowski_2009_NanoLetters`.
+

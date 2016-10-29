@@ -1,0 +1,24 @@
+*********
+Examples
+*********
+
+The input and output files of all the examples are in :file:`/trunk/examples/GSL_randomGenerator`.
+If you don't see an example that relates to your problem, but suspect that ToFeT might be able to handle it, :doc:`email me </contact>`: you might be right!
+
+
+.. warning:: 
+    All examples provided are highly simplistic!
+    When running your own simulations, you need to ensure that your morphology is sufficiently large, and your simulation sufficiently well converged.
+
+.. toctree:: 
+    :maxdepth: 1 
+   
+    tof_simple
+    calculating_occupations
+    tracking
+    coulombic_interactions
+    dark_injection
+    fets
+    calculating_ecp
+    how_to
+

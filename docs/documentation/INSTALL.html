@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>1.4. Installation &mdash; ToFeT v2.1.83 documentation</title>
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.1.83',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="ToFeT v2.1.83 documentation" href="../index.html" />
+    <link rel="up" title="1. Documentation" href="documentation.html" />
+    <link rel="next" title="1.5. Input files" href="input_files.html" />
+    <link rel="prev" title="1.3. Downloading ToFeT" href="download.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../modindex.html" title="Global Module Index"
+             accesskey="M">modules</a> |</li>
+        <li class="right" >
+          <a href="input_files.html" title="1.5. Input files"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="download.html" title="1.3. Downloading ToFeT"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">ToFeT v2.1.83 documentation</a> &raquo;</li>
+          <li><a href="../master_toc.html" >5. Full table of contents</a> &raquo;</li>
+          <li><a href="documentation.html" accesskey="U">1. Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/Alq3_filaments_small.png" alt="Logo"/>
+            </a></p>
+            <h3><a href="../index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="">1.4. Installation</a><ul>
+<li><a class="reference external" href="#prerequisites">1.4.1. Prerequisites</a><ul>
+<li><a class="reference external" href="#c-compiler">1.4.1.1. C++ compiler</a></li>
+<li><a class="reference external" href="#gnu-scientific-library-gsl">1.4.1.2. GNU Scientific Library (GSL)</a></li>
+<li><a class="reference external" href="#command-line-interface-python-and-libraries">1.4.1.3. Command-line interface, Python, and Libraries</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#building-tofet">1.4.2. Building ToFeT</a></li>
+<li><a class="reference external" href="#testing-tofet">1.4.3. Testing ToFeT</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="download.html"
+                                  title="previous chapter">1.3. Downloading ToFeT</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="input_files.html"
+                                  title="next chapter">1.5. Input files</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="../_sources/documentation/INSTALL.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="../search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="installation">
+<h1>1.4. Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="prerequisites">
+<h2>1.4.1. Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="c-compiler">
+<h3>1.4.1.1. C++ compiler<a class="headerlink" href="#c-compiler" title="Permalink to this headline">¶</a></h3>
+<p>The only requisite to run the core code (contained in <tt class="docutils literal"><span class="pre">/trunk/source</span></tt>) is a C++ compiler.</p>
+</div>
+<div class="section" id="gnu-scientific-library-gsl">
+<h3>1.4.1.2. GNU Scientific Library (GSL)<a class="headerlink" href="#gnu-scientific-library-gsl" title="Permalink to this headline">¶</a></h3>
+<p>By default, ToFeT uses the <a class="reference external" href="http://www.gnu.org/software/gsl/">GSL</a> to generate random numbers.
+However, if you don&#8217;t have this installed, an alternative generator is included in the package; see the section: <a class="reference external" href="rngs.html#sec-rngs"><em>Random number generators</em></a>.</p>
+</div>
+<div class="section" id="command-line-interface-python-and-libraries">
+<h3>1.4.1.3. Command-line interface, Python, and Libraries<a class="headerlink" href="#command-line-interface-python-and-libraries" title="Permalink to this headline">¶</a></h3>
+<p>A lot of the functionality that ToFeT offers for the extraction and analysis of data is provided by Python scripts run from the command line.
+A <a class="reference external" href="http://python.org">Python</a> installation of 2.5 or more recent is necessary.
+For some scripts, including <tt class="xref docutils literal"><span class="pre">tft_calc_ecp.py</span></tt> and <tt class="xref docutils literal"><span class="pre">tft_rotate_coords.py</span></tt>, <a class="reference external" href="http://scipy.org/">SciPy and NumPy</a> are also necessary.</p>
+</div>
+</div>
+<div class="section" id="building-tofet">
+<h2>1.4.2. Building ToFeT<a class="headerlink" href="#building-tofet" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><a class="reference external" href="http://code.google.com/p/tofet/downloads/list">Download</a> a <tt class="docutils literal"><span class="pre">***.tar.gz</span></tt> (or, if you&#8217;re feeling bold, <a class="reference external" href="http://code.google.com/p/tofet/source/checkout">check it</a> out of the repository directly).</li>
+<li>Unpack: <tt class="docutils literal"><span class="pre">tar</span> <span class="pre">-zxvf</span> <span class="pre">ToFeT_**.tar.gz</span></tt></li>
+<li>Edit the Makefile (see comments within)</li>
+<li>Cross your fingers</li>
+<li>Type: <tt class="docutils literal"><span class="pre">make</span></tt></li>
+</ol>
+<p>It is <strong>highly recommended that you allow your compiler to make optimisations.</strong>
+ToFeT was developed using the GCC, version 4.3.
+Any other compiler is likely to give warnings - please <a class="reference external" href="../contact.html"><em>let me know</em></a> of these and I&#8217;ll make the necessary clean-ups.</p>
+<p>If you don&#8217;t have the GSL  installed type: <tt class="docutils literal"><span class="pre">make</span> <span class="pre">randomB</span></tt> instead of <tt class="docutils literal"><span class="pre">make</span></tt>.</p>
+<p>The Makefile generates two executables, <tt class="xref docutils literal"><span class="pre">tft</span></tt> and <tt class="xref docutils literal"><span class="pre">tft_occ</span></tt>.
+The former is the most general, the latter is used only when you want to track the time that each molecule is occupied (see below).</p>
+</div>
+<div class="section" id="testing-tofet">
+<h2>1.4.3. Testing ToFeT<a class="headerlink" href="#testing-tofet" title="Permalink to this headline">¶</a></h2>
+<p>A test suite is provided for the GSL random number generator in <tt class="docutils literal"><span class="pre">trunk/examples/GSL_randomGenerator/test</span></tt>.
+Make sure that <tt class="xref docutils literal"><span class="pre">tft</span></tt> and <tt class="xref docutils literal"><span class="pre">tft_occ</span></tt> are in your path, and run the tests by typing:</p>
+<div class="highlight-python"><pre>python tofetTest.py</pre>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../modindex.html" title="Global Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="input_files.html" title="1.5. Input files"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="download.html" title="1.3. Downloading ToFeT"
+             >previous</a> |</li>
+        <li><a href="../index.html">ToFeT v2.1.83 documentation</a> &raquo;</li>
+          <li><a href="../master_toc.html" >5. Full table of contents</a> &raquo;</li>
+          <li><a href="documentation.html" >1. Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2009, Joe Kwiatkowski.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.1.
+    </div>
+  </body>
+</html>

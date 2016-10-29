@@ -1,0 +1,35 @@
+About ToFeT
+===========
+
+ToFeT is a numerical model of charge transport in molecular films, able to simulate the time-of-flight experiment (ToF) :term:`Kwiatkowski_2008_PCCP`, field-effect transistors (FeTs) :term:`Kwiatkowski_2009_NanoLetters`, and potentially dark-injection.  
+As its input, ToFeT takes a description of the film at a molecular level: a description of the position of all molecules and the interactions between them.  
+As its output, ToFeT produces electrical characteristics such as mobilities, JV curves, and photocurrent transients.  ToFeT thus allows the *microscopic* properties of a film to be related to its *macroscopic* electronic properties.
+
+
+ToFeT currently assumes that charges hop between molecules with a rate described by semi-classical Marcus theory.  
+In addition to a description of the morphology of the film, ToFeT also requires the transfer integrals between neighbouring molecules, some description of the energetics of charge transfer, and the reorganisation energy.
+
+Further details of the methodologies used in ToFeT can be found in chapter 4 of reference :term:`Kwiatkowski_2008_thesis`.
+
+
+.. figure:: /documentation/images/ToFeT_large.png
+    :width: 15cm
+    :align: center
+    
+    *A schematic of the input and output of ToFeT.
+    Directed weighted graph depicted by* `Transport For London <http://tfl.gov.uk>`_,  
+    *and the Monte Carlo code by Heath Robinson. 
+    Figure taken from reference* :term:`Kwiatkowski_2008_thesis`.
+
+
+..
+    \begin{figure}[h]
+    \centering
+    \includegraphics{images/ToFeT.eps}
+    \caption{\emph{
+    A schematic of the input and output of ToFeT.
+    Directed weighted graph depicted by} \texttt{http://tfl.gov.uk}\emph{ and Monte Carlo code by Heath Robinson.
+    }}
+    \label{fig:ToFeT}
+    \end{figure}
+

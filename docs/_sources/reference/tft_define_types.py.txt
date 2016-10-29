@@ -1,0 +1,6 @@
+:mod:`tft_define_types.py`
+--------------------------
+
+.. automodule:: tft_define_types
+    :synopsis: Given an XYZ file, define the collection and generation regions.
+

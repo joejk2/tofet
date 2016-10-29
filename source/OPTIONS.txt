@@ -1,0 +1,25 @@
+mode 
+****
+    1) tof:
+    	Default. 
+	'hoppers' number of charges are generated randomly on generators. 
+	Charges are collected on collectors
+    2) regenerate:
+    	'hoppers' number of charges are generated randomly on generators
+	When collected on collectors, another charge is generated on generator
+    3) fet:
+    	'hoppers' number of charges are generated randomly on generators
+	'siteEnergies' must be provided
+	Electrodes are set (i.e. energy of generators = 0, energy of collectors = _fieldZ * lengthZ)
+
+siteEnergies
+************
+    1) Read in site energies of vertices (rather than site energy differences *between* vertices)
+    2) ***.xyz file must be of the form:
+    	---x---y---z---type---energy---
+    3) ***.edge file must be of the form:
+    	---mol1_ID---mol2_ID---J---
+
+hoppers
+*******
+    1) number of hoppers to generate

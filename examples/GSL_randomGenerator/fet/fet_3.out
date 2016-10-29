@@ -1,0 +1,66 @@
+Taking input from tmp.sim, scl_fet.xyz, scl_fet.edge ...
+Read simulation parameters ...
+  : reorg 0.132
+  : Vds -1
+  : Vg 0.7
+  : temp 300
+  : hoppers 0
+  : maxTime 1e-7
+  : tol 0.05
+  : mode fet
+  : siteEnergies 1
+  : hopperInteractions 1
+  : dielectric 4.4
+  : movesCycle 2e4
+  : verbosity low
+  : 
+Setting up GSL random number generator...
+	Generator type: mt19937
+	Seed = 0
+Source Fermi energy = 0.7, drain Fermi energy = -0.3
+Read in 200 vertices from scl_fet.xyz
+Read in 298 edges from scl_fet.edge
+Generated 16 charges, as read from occ.occ
+All systems go!  Beginning KMC...
+.................................
+.................................
+Charge density converged at time = 5.81864e-12
+	Number of charges = 23
+	Charges collected / injected since last reset = 14 / 15
+Current converged at time = 7.55952e-11
+	Number of charges = 24
+	Current (A) = 8.72537e-07
+Simulation finished with 0 warnings
+.................................
+.................................
+> TIME = 7.5595e-11
+> NUMBER OF HOPPERS LEFT = 24
+> TOTAL NUMBER OF HOPPERS COLLECTED AT DRAIN = 379
+> TOTAL NUMBER OF HOPPERS INJECTED AT SOURCE = 379
+> CURRENT (A) = 8.72537e-07
+> OCCUPIED MOLECULES AT END OF SIMULATION
+	molecule_ID
+	0
+	3
+	8
+	14
+	18
+	26
+	30
+	37
+	41
+	46
+	55
+	64
+	71
+	83
+	88
+	106
+	115
+	125
+	135
+	147
+	156
+	164
+	178
+	187

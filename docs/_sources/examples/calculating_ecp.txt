@@ -1,0 +1,32 @@
+Calculating the charge density and electrochemical potential in FeTs
+========================================================================
+
+.. warning:: 
+    Documentation incomplete
+    Give me a :doc:`kick </contact>`, and I'll fill this section in.
+ 
+.. 
+    \subsubsection{Running}
+    \begin{verbatim}
+    getSeries.py converged_output.out occupied_molecules > occupiedMolecules.occ;
+    tofetOccupation fet.sim scl_fet.edge scl_fet.xyz occupiedMolecules.occ > output.out;
+    calcElectrochemicalPotential.py output.out > output.ecPot;
+    averageXY.py output.ecPot 100 > output.ecPot_zAvg;
+    \end{verbatim}
+
+..
+    Set `\verb!converged 1!' in your \verb!*.sim! file and provide a list of occupied molecules from a previously converged simulation in a \verb!*.occ! file as an argument to \verb!tofetOccupation!.
+    Also set \verb!printOccupation 1! and \verb!printEnergies 1! in your \verb!*.sim! file.
+
+..
+
+
+.. figure:: /images/Vds_2e-4_pot.*
+    :align: center
+    
+    *Average electrochemical potential as a function of distance from the source 
+    in a C60 field-effect transistor.
+    Successive curves have been shifted by -0.05~eV to aid the eye.
+    Taken from reference* :term:`Kwiatkowski_2009_NanoLetters`.
+
+

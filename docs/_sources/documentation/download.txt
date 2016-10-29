@@ -1,0 +1,5 @@
+Downloading ToFeT
+=====================
+ToFeT can be downloaded from as a :file:`tar.gz` file from `here <http://code.google.com/p/tofet/downloads/list>`_.
+Alternatively you can `browse the source code <http://code.google.com/p/tofet/source/browse/#svn/trunk/source>`_ or  `checkout the latest version  <http://code.google.com/p/tofet/source/checkout>`_ with subversion.
+

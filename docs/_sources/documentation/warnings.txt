@@ -1,0 +1,13 @@
+Warnings and apologies
+================================
+ToFeT has been carefully tested, but it is probable that bugs remain.
+Although I certainly hope these will be minor, I would appreciate any :doc:`feedback or comments </contact>`.
+
+ToFeT grew somewhat organically, with features added as they were needed.
+As a result, there are places where the code could be cleaner or faster.
+If ToFeT is ever the bottleneck in your simulations, let me know: there are certainly algorithmic and design improvements that could help.
+
+Finally, this documentation has been cobbled together at speed.
+If anything is unclear, or if more details are required, please feel free to send me your questions.
+
+

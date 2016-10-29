@@ -1,0 +1,5 @@
+Dark-injection
+=============================
+Following discussions with Sam Foster and Jenny Nelson, it seems likely that ToFeT can handle dark-injection with small modifications to the :attr:`fet <mode>` mode.
+:doc:`Let me know </contact>` if you're interested and I'll make the necessary changes.
+

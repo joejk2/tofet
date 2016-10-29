@@ -1,0 +1,24 @@
+.. _sec_time:
+
+Time in ToFeT 
+===============
+
+Since ToFeT is a kinetic Monte Carlo code, it treats time physically.  
+The simulation parameter :attr:`maxTime` determines the maximum time a simulation should run for: the simulation may converge and finish before :attr:`maxTime`, but it will never run longer.
+
+.. _sec_photocurrent_bins:
+
+Storing photocurrent transients
+--------------------------------
+Photocurrent transients are best stored in time-bins which increase in size geometrically, so that events that happen on a short time scale are stored with greater resolution than those that happen on long time scales.
+The simulation parameters :attr:`deltaTime` and :attr:`alpha` determine the size and progression of these time bins. 
+The i\ :sup:`th` bin B\ :sub:`i` is between times:
+
+.. math::
+
+   \text{deltaTime} \times \text{alpha}^{i-1} \leq B_i < \text{deltaTime} \times \text{alpha}^{i} 
+
+up to the maximum time :attr:`maxTime`.
+Thus, for fine resolution at small times, and coarser resolution at large times, pick a large :attr:`alpha`.
+For finer resolution across all timescales, decrease :attr:`deltaTime`.
+

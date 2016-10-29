@@ -1,0 +1,2 @@
+.. automodule:: tft_run_batch
+    :synopsis: Run batches of simulations.

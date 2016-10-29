@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>3.1.7. tft_get_values.py &mdash; ToFeT v2.1.69M documentation</title>
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.1.69M',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="ToFeT v2.1.69M documentation" href="../index.html" />
+    <link rel="up" title="3.1. Scripts" href="scripts.html" />
+    <link rel="next" title="3.1.8. tft_make_cubic_lattice.py" href="tft_make_cubic_lattice.py.html" />
+    <link rel="prev" title="3.1.6. tft_get_series.py" href="tft_get_series.py.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../modindex.html" title="Script Index"
+             accesskey="M">scripts</a> |</li>
+        <li class="right" >
+          <a href="tft_make_cubic_lattice.py.html" title="3.1.8. tft_make_cubic_lattice.py"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="tft_get_series.py.html" title="3.1.6. tft_get_series.py"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">ToFeT v2.1.69M documentation</a> &raquo;</li>
+          <li><a href="reference.html" >3. Reference</a> &raquo;</li>
+          <li><a href="scripts.html" accesskey="U">3.1. Scripts</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3><a href="../index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="">3.1.7. <tt class="docutils literal"><span class="pre">tft_get_values.py</span></tt></a><ul>
+<li><a class="reference external" href="#command-line-usage">3.1.7.1. Command line usage</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="tft_get_series.py.html"
+                                  title="previous chapter">3.1.6. <tt class="docutils literal docutils literal docutils literal"><span class="pre">tft_get_series.py</span></tt></a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="tft_make_cubic_lattice.py.html"
+                                  title="next chapter">3.1.8. <tt class="docutils literal"><span class="pre">tft_make_cubic_lattice.py</span></tt></a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="../_sources/reference/tft_get_values.py.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="../search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="tft-get-values-py">
+<span id="module-tft_get_values"></span><h1>3.1.7. <tt class="xref docutils literal"><span class="pre">tft_get_values.py</span></tt><a class="headerlink" href="#tft-get-values-py" title="Permalink to this headline">¶</a></h1>
+<p><em>Module author: Joe Kwiatkowski</em></p>
+<p>Return data value(s) from ToFeT output file(s).</p>
+<div class="section" id="command-line-usage">
+<h2>3.1.7.1. Command line usage<a class="headerlink" href="#command-line-usage" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre>tft_get_values.py  TOFET_OUTPUT  SERIES
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>where <em>TOFET_OUTPUT</em> is a <a class="reference external" href="glossary.html#term-glob-pattern"><em class="xref">glob pattern</em></a> and <em>SERIES</em> is one of the following options:</dt>
+<dd><ul class="first last simple">
+<li><em>fet_current</em> (for the FET converged current)</li>
+<li><em>Vg</em> (for the gate voltage)</li>
+<li><em>hoppers</em> (for the number of hoppers left at the end of the simulation)</li>
+<li><em>temperature</em> (...)</li>
+<li><em>displacement_mobility</em> (mobility from the total displacement and total        time)</li>
+<li><em>velocity_mobility</em> (mobility from the collection times)</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../modindex.html" title="Script Index"
+             >scripts</a> |</li>
+        <li class="right" >
+          <a href="tft_make_cubic_lattice.py.html" title="3.1.8. tft_make_cubic_lattice.py"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="tft_get_series.py.html" title="3.1.6. tft_get_series.py"
+             >previous</a> |</li>
+        <li><a href="../index.html">ToFeT v2.1.69M documentation</a> &raquo;</li>
+          <li><a href="reference.html" >3. Reference</a> &raquo;</li>
+          <li><a href="scripts.html" >3.1. Scripts</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2009, Joe Kwiatkowski.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+reorg 0.132			
+temp 300.0 
+fieldZ -5e-3 
+hoppers 2		
+maxRuns 1
+maxTime 1e-13
+deltaTime 1e-14	
+alpha 1.5		
+tol 1e-4		
+track 1
+#verbosity high
+

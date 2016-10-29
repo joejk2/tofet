@@ -1,0 +1,11 @@
+Tracking the motion of the charges
+=======================================
+
+:file:`trunk/examples/GSL_randomGenerator/track_hoppers/`
+
+If you want to track the individual hops of each charge, set :attr:`track` to 1 in your :ref:`sim file <sec_sim_file>`, and run with :mod:`tftOccupation`.  The output is of the form::
+
+    Hopper_ID    time (s)    x (Ang)    y (Ang)    z (Ang)
+
+.. warning:: The output files produced with :attr:`track` can be very large indeed!  Keep :attr:`maxTime` and :attr:`maxRuns` small.
+

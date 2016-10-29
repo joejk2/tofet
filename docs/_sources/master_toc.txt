@@ -1,0 +1,10 @@
+Full table of contents
+=======================
+
+.. toctree::
+    :numbered:
+
+    /documentation/documentation
+    /examples/examples
+    /reference/reference
+    

@@ -1,0 +1,14 @@
+See trunk/docs/doc.pdf for details...
+###################################
+reorg 0.132	
+temp 300.0	
+fieldZ -5e-3 
+hoppers 1		    
+maxTime 1e-9      #This should be larger for good averaging	
+deltaTime 1e-11	
+alpha 1.5		
+maxRuns 1           
+tol 1e-10           #Set this small so that simulation times out at maxTime
+mode regenerate 
+printOccupation 1
+verbosity low

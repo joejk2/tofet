@@ -1,0 +1,20 @@
+Frequently Asked Questions
+--------------------------
+.. contents::
+    :local:
+
+
+
+Can ToFeT simulate bipolar devices?
+""""""""""""""""""""""""""""""""""""
+Currently, no, ToFeT can only simulate holes **or** electrons.  However, the capability to deal with both will be added to future versions of the code.
+
+What about the input?
+"""""""""""""""""""""
+
+I want a particular feature that ToFeT doesn't seem to offer, how can I get it?
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Either 
+
+* :doc:`Contact me </contact>`.  If it's interesting enough I'd be happy to help.
+* Code it yourself :).  In this case, please consider sending me your modifications so that they can be included in future releases.

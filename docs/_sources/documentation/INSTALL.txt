@@ -1,0 +1,48 @@
+Installation
+=======================
+
+Prerequisites
+-----------------------
+
+C++ compiler
+^^^^^^^^^^^^^^
+The only requisite to run the core code (contained in :file:`/trunk/source`) is a C++ compiler.
+
+GNU Scientific Library (GSL)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+By default, ToFeT uses the `GSL <http://www.gnu.org/software/gsl/>`_ to generate random numbers. 
+However, if you don't have this installed, an alternative generator is included in the package; see the section: :ref:`sec:rngs`.
+
+
+Command-line interface, Python, and Libraries
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+A lot of the functionality that ToFeT offers for the extraction and analysis of data is provided by Python scripts run from the command line.
+A `Python <http://python.org>`_ installation of 2.5 or more recent is necessary.
+For some scripts, including :mod:`tft_calc_ecp.py` and :mod:`tft_rotate_coords.py`, `SciPy and NumPy <http://scipy.org/>`_ are also necessary.
+
+
+Building ToFeT
+---------------
+#. `Download <http://code.google.com/p/tofet/downloads/list>`_ a :file:`***.tar.gz` (or, if you're feeling bold, `check it <http://code.google.com/p/tofet/source/checkout>`_ out of the repository directly).
+#. Unpack: ``tar -zxvf ToFeT_**.tar.gz``
+#. Edit the Makefile (see comments within)
+#. Cross your fingers
+#. Type: ``make``
+
+It is **highly recommended that you allow your compiler to make optimisations.**
+ToFeT was developed using the GCC, version 4.3.
+Any other compiler is likely to give warnings - please :doc:`let me know </contact>` of these and I'll make the necessary clean-ups.
+
+If you don't have the GSL  installed type: ``make randomB`` instead of ``make``.
+
+The Makefile generates two executables, :mod:`tft` and :mod:`tft_occ`.
+The former is the most general, the latter is used only when you want to track the time that each molecule is occupied (see below).
+
+
+Testing ToFeT
+--------------
+A test suite is provided for the GSL random number generator in :file:`trunk/examples/GSL\_randomGenerator/test`.
+Make sure that :mod:`tft` and :mod:`tft_occ` are in your path, and run the tests by typing::
+
+    python tofetTest.py
+

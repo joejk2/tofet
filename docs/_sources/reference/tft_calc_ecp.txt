@@ -1,0 +1,5 @@
+:mod:`tft_calc_ecp`
+-------------------
+
+.. automodule:: tft_calc_ecp
+    :synopsis: Calculate the electrochemical potential.

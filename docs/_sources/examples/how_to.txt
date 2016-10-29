@@ -1,0 +1,17 @@
+How-to miscellany
+=========================
+
+Apply the electric field in different directions
+---------------------------------------------------
+ToFeT always considers the electric field to run along the Z-axis.
+To apply electric fields in a different direction simply rotate the :ref:`xyz file <sec_xyz_file>` file with :mod:`tft_rotate_coords`. 
+Note that the electric field can only be applied perpendicular to one of the faces of the unit cell.
+
+Submit batch jobs to ToFeT
+-----------------------------------
+Use :mod:`tft_run_batch`.
+
+Extract specific data from large output files
+--------------------------------------------------------
+Use :mod:`tft_extract`.
+

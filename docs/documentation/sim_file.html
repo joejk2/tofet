@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>1.5.3. The ‘sim’ file &mdash; ToFeT v2.1.83 documentation</title>
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.1.83',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="ToFeT v2.1.83 documentation" href="../index.html" />
+    <link rel="up" title="1.5. Input files" href="input_files.html" />
+    <link rel="next" title="1.6. Time in ToFeT" href="time.html" />
+    <link rel="prev" title="1.5.2. The ‘edge’ file" href="edge_file.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../modindex.html" title="Global Module Index"
+             accesskey="M">modules</a> |</li>
+        <li class="right" >
+          <a href="time.html" title="1.6. Time in ToFeT"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="edge_file.html" title="1.5.2. The ‘edge’ file"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">ToFeT v2.1.83 documentation</a> &raquo;</li>
+          <li><a href="../master_toc.html" >5. Full table of contents</a> &raquo;</li>
+          <li><a href="documentation.html" >1. Documentation</a> &raquo;</li>
+          <li><a href="input_files.html" accesskey="U">1.5. Input files</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/Alq3_filaments_small.png" alt="Logo"/>
+            </a></p>
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="edge_file.html"
+                                  title="previous chapter">1.5.2. The &#8216;edge&#8217; file</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="time.html"
+                                  title="next chapter">1.6. Time in ToFeT</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="../_sources/documentation/sim_file.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="../search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="the-sim-file">
+<span id="sec-sim-file"></span><h1>1.5.3. The &#8216;sim&#8217; file<a class="headerlink" href="#the-sim-file" title="Permalink to this headline">¶</a></h1>
+<p>The <em>.sim</em> file contains all the simulation variables.
+The format of the file is:</p>
+<blockquote>
+<tt class="docutils literal"><span class="pre">KEYWORD</span>&nbsp;&nbsp; <span class="pre">VALUE</span>&nbsp;&nbsp; <span class="pre">[VALUE_2]</span>&nbsp;&nbsp; <span class="pre">[VALUE_3]</span></tt></blockquote>
+<p>where <em>KEYWORD</em> relates to one of the simulation variables, and <em>VALUE</em> is its value.
+Multiple values can be given when submitting batch jobs with <a title="Run batches of simulations." class="reference external" href="../reference/tft_run_batch.py.html#module-tft_run_batch"><tt class="xref docutils literal"><span class="pre">tft_run_batch</span></tt></a>.</p>
+<p>Depending on the simulation you are running, some variables are necessary, whilst others are optional.
+Different simulations are discussed in the section on <a class="reference external" href="../examples/examples.html"><em>Examples</em></a>, and a summary of all variables is given in appendix~ref{appen:sim}.</p>
+<p>section{Simulation exampleslabel{sec:use}}
+Examples of several different simulations are given here, in rough order of increasing complexity.
+If you don&#8217;t see an example that relates to your problem, but suspect that ToFeT might be able to handle it, email me~cite{me}: you might be right.</p>
+<p>Please note: textbf{all examples provided are highly simplistic!}
+In particular, to ensure good convergence, you need to ensure that your morphology is sufficiently large, and your simulation sufficiently well converged.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../modindex.html" title="Global Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="time.html" title="1.6. Time in ToFeT"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="edge_file.html" title="1.5.2. The ‘edge’ file"
+             >previous</a> |</li>
+        <li><a href="../index.html">ToFeT v2.1.83 documentation</a> &raquo;</li>
+          <li><a href="../master_toc.html" >5. Full table of contents</a> &raquo;</li>
+          <li><a href="documentation.html" >1. Documentation</a> &raquo;</li>
+          <li><a href="input_files.html" >1.5. Input files</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2009, Joe Kwiatkowski.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.1.
+    </div>
+  </body>
+</html>

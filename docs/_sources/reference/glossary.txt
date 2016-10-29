@@ -1,0 +1,54 @@
+********
+Glossary
+********
+
+.. glossary::
+    :sorted: 
+  
+    run 
+        An individual 'run' of the Monte Carlo code which ends, for examples, when the convergence criteria have been met, or :attr:`maxTime` exceeded.  To ensure good sampling, a simulation should average results over *many* runs.
+
+    :doc:`xyz file </documentation/xyz_file>`
+        The coordinates of each :term:`vertex` in the film, it's opto-electronic characteristics and, optionally, it's :term:`site energy`. 
+
+    :doc:`edge file </documentation/edge_file>`
+        A description of the connections between :term:`vertices <vertex>` in the film.
+
+    :doc:`sim file </documentation/sim_file>`
+        All of the parameters needed to define the running of the simulation.
+
+    vertex
+        A point within the film morphology.  This generally refers to a single charge transport unit such as the centre of a small molecule, or a conjugated segment of a polymer.
+
+    transfer Integral
+        The electronic coupling between different charge transport :term:`vertices <vertex>`.
+
+    site Energy 
+        The energy of a :term:`hopper` when on a particular :term:`vertex`.  ToFeT considers the site energy to consist of a static part, which is due to identity of individual molecules and their packing, and a dynamic part, which is due to the Coulombic interaction between :term:`hoppers <hopper>`.
+    
+    energetic driving force
+        The difference between two :term:`site energies <site energy>`.
+
+    hopper
+        A hole, electron, or exciton that can move between :term:`vertices <vertex>`.
+
+    DE 
+        The difference in :term:`site energies <Site Energy>`.
+
+    J
+        The :term:`transfer integral`.
+
+    COL_GEN 
+        The fraction of a morphology in which :term:`hoppers <Hopper>` can be collected or generated.  A *COL_GEN* of 0.05 implies that the bottom 5% of the film (along the Z-axis) can generate :term:`hoppers <Hopper>`, and the top 5% of the film can collect them.
+
+    `glob pattern <http://www.faqs.org/docs/abs/HTML/globbingref.html>`_
+        The standard way in which filenames are expanded on UNIX type systems.  
+        For example, :file:`massive_mobilities*out` would match, :file:`massive_mobilities_0.out`, :file:`massive_mobilities_1.out`, and :file:`massive_mobilities_I_doubt`.
+    
+    generator
+        :term:`Vertices <vertex>` on which :term:`hoppers <hopper>` can be generated.  See also section :ref:`sec_types`. 
+
+    collector
+        :term:`Vertices <vertex>` on which :term:`hoppers <hopper>` can be collected.  See also section :ref:`sec_types`. 
+
+    

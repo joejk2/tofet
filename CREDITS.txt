@@ -1,0 +1,95 @@
+###########################################################################
+#
+# CITING ToFeT
+# ============
+#
+# If you have used ToFeT, please cite it as follows:
+#	Kwiatkowski J. J., Frost J.M., and Nelson J.; The effect of morphology 
+#	on electron field-effect mobility in disordered C60 thin-films;
+#	Nano Letters, 9(3), 1085–1090, 2009.
+# 
+###########################################################################
+
+###########################################################################
+#
+# AUTHORS
+# =======
+#
+# ToFeT is maintained and developed by Joe Kwiatkowski, currently a 
+# postdoc in the groups of Andy Spakowitz and Alberto Salleo at Stanford 
+# University.  ToFeT was originally written whilst Joe was a PhD student 
+# in Professor Jenny Nelson's group, Imperial College London, where 
+# kinetic Monte Carlo methods had been applied to charge transport long 
+# before Joe had taken his first (MC) steps.
+#
+# The following people have made important contributions to the 
+# methodologies used by ToFeT:
+#   Professor Jenny Nelson 
+#       Imperial College London   
+#   Dr. James Kirkpatrick  
+#       PhD in physics, Imperial College London, 2003 - 2007
+#       Research fellow, Imperial College London, 2007 - 
+#   Dr. Amanda Chatten (Imperial College London)
+#       Postdoc in Nelson group 2003 - 2007
+#  
+# Other authors have made kind contributions:
+#	Victor Ruehle (MPIP):  for providing the matrix and vector classes. 
+#	Rosie Chandler:  for the use of the RandomB.h
+#	The many authors of the GSL						
+#
+# Thanks also to those who were bold enough to use the code in its 
+# early days, and who provided useful feedback:
+#    Andreas Fuchs and Christian Lennartz (BASF)
+###########################################################################
+
+###########################################################################
+#
+# HISTORY
+# =======
+# This is a summary of the development of ToFeT, in reverse chronological
+# order.  For a full description of changes, please see 'CHANGES.txt'.
+#
+# 2009: 
+#       March 17: Release of ToFeT 2.0 under LGPL 
+# 
+# 2008: 
+#       ToFeT is born: Joe Kwiatkowski develops code to simulate both 
+#       time-of-flight and field-effect transistor experiments:
+#
+#       Kwiatkowski J. J., Frost J.M., and Nelson J.; The effect of 
+#       morphology on electron field-effect mobility in disordered C60
+#       thin-films;	Nano Letters, 9(3), 1085–1090, 2009.
+#
+#       Existing Monte Carlo modules and data structures redesigned by
+#       Joe Kwiatkowski and James Kirkpatrick.
+#
+#       Kwiatkowski, J. J. and Nelson, J. and Li, H. and Bredas, J. L.
+#       and Wenzel, W. and Lennartz, C.; Simulating charge transport 
+#       in tris(8-hydroxyquinoline) aluminium (Alq3); PCCP; 2008, 10, 
+#       1852
+# 
+#
+# 2007: 
+#       Kirkpatrick, J. and Marcon, V. and Nelson, J. and Kremer, K.
+#       and Andrienko, D.; Charge mobility of discotic mesophases: A 
+#       multiscale quantum and classical study; Phys. Rev. Lett.; 2007,
+#       98, 227402
+#
+# 2005: 
+#       Chatten, A. and Tuladhar, S. and Choulis, S. and Bradley, D.
+#       and Nelson, J.; Monte Carlo modelling of hole transport in 
+#       MDMO-PPV: PCBM blends; J. Mater. Sci.; 2005, 1393
+#
+# < 2005:
+#       Monte Carlo methods developed by Jenny Nelson for transport
+#       simulations.
+###########################################################################
+
+###########################################################################
+#
+# FUNDING 
+# =======
+#
+# UKERC: Joe Kwiatkowski's PhD studentship in the group of 
+# Professor Nelson.
+###########################################################################

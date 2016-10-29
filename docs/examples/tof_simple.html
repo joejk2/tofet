@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.1. Time-of-flight simulations &mdash; ToFeT v2.1.83 documentation</title>
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.1.83',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="ToFeT v2.1.83 documentation" href="../index.html" />
+    <link rel="up" title="2. Examples" href="examples.html" />
+    <link rel="next" title="2.2. Calculating occupation probabilities" href="calculating_occupations.html" />
+    <link rel="prev" title="2. Examples" href="examples.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../modindex.html" title="Global Module Index"
+             accesskey="M">modules</a> |</li>
+        <li class="right" >
+          <a href="calculating_occupations.html" title="2.2. Calculating occupation probabilities"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="examples.html" title="2. Examples"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">ToFeT v2.1.83 documentation</a> &raquo;</li>
+          <li><a href="../master_toc.html" >5. Full table of contents</a> &raquo;</li>
+          <li><a href="examples.html" accesskey="U">2. Examples</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/Alq3_filaments_small.png" alt="Logo"/>
+            </a></p>
+            <h3><a href="../index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="">2.1. Time-of-flight simulations</a><ul>
+<li><a class="reference external" href="#files">2.1.1. Files</a></li>
+<li><a class="reference external" href="#running">2.1.2. Running</a></li>
+<li><a class="reference external" href="#simulation-variables">2.1.3. Simulation variables</a></li>
+<li><a class="reference external" href="#under-the-hood">2.1.4. Under the hood...</a></li>
+<li><a class="reference external" href="#output">2.1.5. Output</a><ul>
+<li><a class="reference external" href="#configuring-the-output">2.1.5.1. Configuring the output</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="examples.html"
+                                  title="previous chapter">2. Examples</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="calculating_occupations.html"
+                                  title="next chapter">2.2. Calculating occupation probabilities</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="../_sources/examples/tof_simple.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="../search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="time-of-flight-simulations">
+<h1>2.1. Time-of-flight simulations<a class="headerlink" href="#time-of-flight-simulations" title="Permalink to this headline">¶</a></h1>
+<p><tt class="docutils literal"><span class="pre">trunk/examples/GSL_randomGenerator/tof/</span></tt></p>
+<p>This example runs ToF simulations on a simple cubic lattice containing 12500 molecules.</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#files" id="id1">Files</a></li>
+<li><a class="reference internal" href="#running" id="id2">Running</a></li>
+<li><a class="reference internal" href="#simulation-variables" id="id3">Simulation variables</a></li>
+<li><a class="reference internal" href="#under-the-hood" id="id4">Under the hood...</a></li>
+<li><a class="reference internal" href="#output" id="id5">Output</a><ul>
+<li><a class="reference internal" href="#configuring-the-output" id="id6">Configuring the output</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="files">
+<h2><a class="toc-backref" href="#id1">2.1.1. Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></a></h2>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">tof.sim</span></tt></dt>
+<dd>Simulation parameters</dd>
+<dt><tt class="docutils literal"><span class="pre">scl.xyz</span></tt></dt>
+<dd>Morphology and molecule types</dd>
+<dt><tt class="docutils literal"><span class="pre">scl.edge</span></tt></dt>
+<dd>J and $Delta$E for neighbouring molecules</dd>
+<dt><tt class="docutils literal"><span class="pre">tof_*.out</span></tt></dt>
+<dd>Output files for all permutations of values in tof.sim</dd>
+<dt><tt class="docutils literal"><span class="pre">tof_0.transient</span></tt></dt>
+<dd>A file containing just the photocurrent transient from tof_0.out</dd>
+<dt><tt class="docutils literal"><span class="pre">PF.dat</span></tt></dt>
+<dd>A file containing the Poole-Frenkel data</dd>
+</dl>
+</div>
+<div class="section" id="running">
+<h2><a class="toc-backref" href="#id2">2.1.2. Running<a class="headerlink" href="#running" title="Permalink to this headline">¶</a></a></h2>
+<p>In the simplest case, run:</p>
+<div class="highlight-bash"><div class="highlight"><pre>tft  tof.sim  scl.xyz  scl.edge  &gt;  output_file
+</pre></div>
+</div>
+<p>This will runs a single simulation with the first values of each variable that is read in
+However, <tt class="docutils literal"><span class="pre">tof.sim</span></tt> contains multiple values for the variables <a title="fieldZ" class="reference external" href="../reference/sim_parameters.html#fieldZ"><tt class="xref docutils literal"><span class="pre">fieldZ</span></tt></a> and <a title="temp" class="reference external" href="../reference/sim_parameters.html#temp"><tt class="xref docutils literal"><span class="pre">temp</span></tt></a>.
+To run ToFeT for all of these values, ensure that <tt class="docutils literal"><span class="pre">/trunk/scripts</span></tt> is on your <span class="target" id="index-7"></span><strong class="xref">PATH</strong>, and run:</p>
+<div class="highlight-python"><pre>tft_run_batch.py  tof.sim  scl.xyz  scl.edge</pre>
+</div>
+<p>This will run four simulations for all permutations of all values read in, putting the output in <tt class="docutils literal"><span class="pre">0.out</span></tt>, <tt class="docutils literal"><span class="pre">1.out</span></tt>, <tt class="docutils literal"><span class="pre">2.out</span></tt>, <tt class="docutils literal"><span class="pre">3.out</span></tt>.</p>
+</div>
+<div class="section" id="simulation-variables">
+<h2><a class="toc-backref" href="#id3">2.1.3. Simulation variables<a class="headerlink" href="#simulation-variables" title="Permalink to this headline">¶</a></a></h2>
+<p>The reorganisation energy of your molecule is determined by <a title="reorg" class="reference external" href="../reference/sim_parameters.html#reorg"><tt class="xref docutils literal"><span class="pre">reorg</span></tt></a> (in eV).
+The temperature <a title="temp" class="reference external" href="../reference/sim_parameters.html#temp"><tt class="xref docutils literal"><span class="pre">temp</span></tt></a> is in K, the field along the z axis, <a title="fieldZ" class="reference external" href="../reference/sim_parameters.html#fieldZ"><tt class="xref docutils literal"><span class="pre">fieldZ</span></tt></a> is in (V/Å), and the number of hoppers (charges) in your simulation is given by <a title="hoppers" class="reference external" href="../reference/sim_parameters.html#hoppers"><tt class="xref docutils literal"><span class="pre">hoppers</span></tt></a>.
+The simulation will continue running until either the time is <a title="maxTime" class="reference external" href="../reference/sim_parameters.html#maxTime"><tt class="xref docutils literal"><span class="pre">maxTime</span></tt></a>, or all your charges are collected.
+The variables <a title="alpha" class="reference external" href="../reference/sim_parameters.html#alpha"><tt class="xref docutils literal"><span class="pre">alpha</span></tt></a> and <a title="deltaTime" class="reference external" href="../reference/sim_parameters.html#deltaTime"><tt class="xref docutils literal"><span class="pre">deltaTime</span></tt></a> do not affect the simulation in anyway, but simply determine how the photocurrent transient is stored and output; see section <a class="reference external" href="../documentation/time.html#sec-time"><em>Time in ToFeT</em></a>.</p>
+<p>Once <a title="maxTime" class="reference external" href="../reference/sim_parameters.html#maxTime"><tt class="xref docutils literal"><span class="pre">maxTime</span></tt></a> has been exceeded, or all the hoppers have been collected, the simulation will repeat until the mobility has converged to within a fractional tolerance of <a title="tol" class="reference external" href="../reference/sim_parameters.html#tol"><tt class="xref docutils literal"><span class="pre">tol</span></tt></a>.
+If you wish to limit how many such runs are made, you can specify a <a title="maxRuns" class="reference external" href="../reference/sim_parameters.html#maxRuns"><tt class="xref docutils literal"><span class="pre">maxRuns</span></tt></a>.
+If either <a title="maxTime" class="reference external" href="../reference/sim_parameters.html#maxTime"><tt class="xref docutils literal"><span class="pre">maxTime</span></tt></a> or <a title="maxRuns" class="reference external" href="../reference/sim_parameters.html#maxRuns"><tt class="xref docutils literal"><span class="pre">maxRuns</span></tt></a> are exceeded, you will be returned warnings by ToFeT.</p>
+</div>
+<div class="section" id="under-the-hood">
+<h2><a class="toc-backref" href="#id4">2.1.4. Under the hood...<a class="headerlink" href="#under-the-hood" title="Permalink to this headline">¶</a></a></h2>
+<p>When you run the simulation, <a title="hoppers" class="reference external" href="../reference/sim_parameters.html#hoppers"><tt class="xref docutils literal"><span class="pre">hoppers</span></tt></a> charges are generated at random on any of the <a class="reference external" href="../reference/glossary.html#term-generator"><em class="xref">generators</em></a> specified in your <a class="reference external" href="../documentation/xyz_file.html#sec-xyz-file"><em>xyz file</em></a>.
+These charges then move under the influence of <a title="fieldZ" class="reference external" href="../reference/sim_parameters.html#fieldZ"><tt class="xref docutils literal"><span class="pre">fieldZ</span></tt></a>.
+If a charge hops onto a <a class="reference external" href="../reference/glossary.html#term-collector"><em class="xref">collector</em></a> it is removed from the simulation.
+The simulation finishes when either the mobility has converged, or <a title="maxTime" class="reference external" href="../reference/sim_parameters.html#maxTime"><tt class="xref docutils literal"><span class="pre">maxTime</span></tt></a> and <a title="maxRuns" class="reference external" href="../reference/sim_parameters.html#maxRuns"><tt class="xref docutils literal"><span class="pre">maxRuns</span></tt></a> have both been exceeded.</p>
+</div>
+<div class="section" id="output">
+<h2><a class="toc-backref" href="#id5">2.1.5. Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></a></h2>
+<p>After some initial details of the simulation, ToFeT will output any warnings that may have arisen.
+Following this is the photocurrent transient, the mobilities, and some other values that may be of interest.</p>
+<p>Two mobilities are given:</p>
+<ol class="arabic simple">
+<li><a class="reference external" href="../documentation/calculating_mobilities.html#sec-velocity-mu"><em>Mobilities from average velocity</em></a></li>
+<li><a class="reference external" href="../documentation/calculating_mobilities.html#sec-displacement-mu"><em>Mobilities from average displacement</em></a></li>
+</ol>
+<p>See <a class="reference external" href="../documentation/calculating_mobilities.html#sec-mu"><em>Calculating mobilities</em></a> for more information.</p>
+<p>ToFeT uses the first of these mobilities to determine when the simulation has converged.
+If the simulation doesn&#8217;t converge, you will be warned.
+See <a class="reference external" href="../documentation/calculating_mobilities.html#sec-convergence"><em>Convergence</em></a> for how to deal with this.</p>
+<p>To extract the mobility from all your output files in a format that is suitable for a Poole-Frenkel plot, type:</p>
+<div class="highlight-python"><pre>plotPF.py tof*.out</pre>
+</div>
+<p>The output is given in (V/cm)<sup>1/2</sup> <em>vs.</em> cm<sup>2</sup>/V.s.
+See <a title="Extract data suitable for a Poole-Frenkel plot." class="reference external" href="../reference/tft_plot_pf.py.html#module-tft_plot_pf"><tt class="xref docutils literal"><span class="pre">tft_plot_pf</span></tt></a> for more details.</p>
+<p>To extract the photocurrent transients from a single output file (e.g. <tt class="docutils literal"><span class="pre">tof_0.out</span></tt>), type:</p>
+<div class="highlight-python"><pre>tft_extract.py tof_0.out --transient</pre>
+</div>
+<p>See <a title="Extract data from ToFeT output files." class="reference external" href="../reference/tft_extract.py.html#module-tft_extract"><tt class="xref docutils literal"><span class="pre">tft_extract</span></tt></a> for more details.</p>
+<div class="section" id="configuring-the-output">
+<h3><a class="toc-backref" href="#id6">2.1.5.1. Configuring the output<a class="headerlink" href="#configuring-the-output" title="Permalink to this headline">¶</a></a></h3>
+<p>To adjust the resolution of the photocurrent transient, see section <a class="reference external" href="../documentation/time.html#sec-photocurrent-bins"><em>Storing photocurrent transients</em></a>.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../modindex.html" title="Global Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="calculating_occupations.html" title="2.2. Calculating occupation probabilities"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="examples.html" title="2. Examples"
+             >previous</a> |</li>
+        <li><a href="../index.html">ToFeT v2.1.83 documentation</a> &raquo;</li>
+          <li><a href="../master_toc.html" >5. Full table of contents</a> &raquo;</li>
+          <li><a href="examples.html" >2. Examples</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2009, Joe Kwiatkowski.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.1.
+    </div>
+  </body>
+</html>

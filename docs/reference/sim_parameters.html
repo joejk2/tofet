@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>3.2. Simulation parameters &mdash; ToFeT v2.1.83 documentation</title>
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.1.83',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="ToFeT v2.1.83 documentation" href="../index.html" />
+    <link rel="up" title="3. Reference" href="reference.html" />
+    <link rel="next" title="3.3. Glossary" href="glossary.html" />
+    <link rel="prev" title="3.1.9. tft_run_batch.py" href="tft_run_batch.py.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../modindex.html" title="Global Module Index"
+             accesskey="M">modules</a> |</li>
+        <li class="right" >
+          <a href="glossary.html" title="3.3. Glossary"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="tft_run_batch.py.html" title="3.1.9. tft_run_batch.py"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">ToFeT v2.1.83 documentation</a> &raquo;</li>
+          <li><a href="../master_toc.html" >5. Full table of contents</a> &raquo;</li>
+          <li><a href="reference.html" accesskey="U">3. Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/Alq3_filaments_small.png" alt="Logo"/>
+            </a></p>
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="tft_run_batch.py.html"
+                                  title="previous chapter">3.1.9. <tt class="docutils literal"><span class="pre">tft_run_batch.py</span></tt></a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="glossary.html"
+                                  title="next chapter">3.3. Glossary</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="../_sources/reference/sim_parameters.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="../search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="simulation-parameters">
+<h1>3.2. Simulation parameters<a class="headerlink" href="#simulation-parameters" title="Permalink to this headline">¶</a></h1>
+<dl class="attribute">
+<dt id="alpha">
+<tt class="descname">alpha</tt><a class="headerlink" href="#alpha" title="Permalink to this definition">¶</a></dt>
+<dd><p>(<a title="mode" class="reference internal" href="#mode"><tt class="xref docutils literal"><span class="pre">tof</span></tt></a> or <a title="mode" class="reference internal" href="#mode"><tt class="xref docutils literal"><span class="pre">regenerate</span></tt></a> modes only).</p>
+<p>The geometric scaling of time bins.</p>
+<p>See also section <a class="reference external" href="../documentation/time.html#sec-time"><em>Time in ToFeT</em></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="converged">
+<tt class="descname">converged</tt><a class="headerlink" href="#converged" title="Permalink to this definition">¶</a></dt>
+<dd>(1,0)
+(<a title="mode" class="reference internal" href="#mode"><tt class="xref docutils literal"><span class="pre">fet</span></tt></a> mode only).
+If 1, set the hopper density as converged immediately.
+Make sure to feed the simulation the correct distribution of hoppers in a occ file as an option to protect_me.</dd></dl>
+
+<dl class="attribute">
+<dt id="cyclesForConverence">
+<tt class="descname">cyclesForConverence</tt><a class="headerlink" href="#cyclesForConverence" title="Permalink to this definition">¶</a></dt>
+<dd>(1,0)
+(<a title="mode" class="reference internal" href="#mode"><tt class="xref docutils literal"><span class="pre">fet</span></tt></a> only).
+The current must be within <a title="tol" class="reference internal" href="#tol"><tt class="xref docutils literal"><span class="pre">tol</span></tt></a> for this many cycles for the current to be deemed converged.
+Defaults to 15.
+See also movesCycle</dd></dl>
+
+<dl class="attribute">
+<dt id="dielectric">
+<tt class="descname">dielectric</tt><a class="headerlink" href="#dielectric" title="Permalink to this definition">¶</a></dt>
+<dd>(<a title="mode" class="reference internal" href="#mode"><tt class="xref docutils literal"><span class="pre">regenerate</span></tt></a> and <a title="mode" class="reference internal" href="#mode"><tt class="xref docutils literal"><span class="pre">fet</span></tt></a> modes only).  Whenever hopperInteractions are enabled (by default for <a title="mode" class="reference internal" href="#mode"><tt class="xref docutils literal"><span class="pre">fet</span></tt></a>), specify the dielectric constant.</dd></dl>
+
+<dl class="attribute">
+<dt id="fieldZ">
+<tt class="descname">fieldZ</tt><a class="headerlink" href="#fieldZ" title="Permalink to this definition">¶</a></dt>
+<dd>The field along the z axis in qV/Ang, where q=$pm$1 for holes / electrons.
+protect_me always expects charges to drift along the z axis.
+In a normal setup the generators are at small z&#8217;s and the collectors are at large z&#8217;s.
+In this case fieldZ must be negative so that charges move in a positive direction along z.
+textbf{Note:} because q is contained within this definition of the field, no adjustment to fieldZ has to be made between hole and electron simulations: both drift along z for negative fieldZ&#8217;s.</dd></dl>
+
+<dl class="attribute">
+<dt id="deltaTime">
+<tt class="descname">deltaTime</tt><a class="headerlink" href="#deltaTime" title="Permalink to this definition">¶</a></dt>
+<dd><p>(<a title="mode" class="reference internal" href="#mode"><tt class="xref docutils literal"><span class="pre">tof</span></tt></a> or <a title="mode" class="reference internal" href="#mode"><tt class="xref docutils literal"><span class="pre">regenerate</span></tt></a> modes only).
+The width of the first time bin used to store transient current events (see section~ref{sec:<a title="mode" class="reference internal" href="#mode"><tt class="xref docutils literal"><span class="pre">tof</span></tt></a>:configuring}).</p>
+<p>See also section <a class="reference external" href="../documentation/time.html#sec-time"><em>Time in ToFeT</em></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="hoppers">
+<tt class="descname">hoppers</tt><a class="headerlink" href="#hoppers" title="Permalink to this definition">¶</a></dt>
+<dd>(<a title="mode" class="reference internal" href="#mode"><tt class="xref docutils literal"><span class="pre">tof</span></tt></a> or <a title="mode" class="reference internal" href="#mode"><tt class="xref docutils literal"><span class="pre">regenerate</span></tt></a> mode only).
+The number of hoppers (charges).</dd></dl>
+
+<dl class="attribute">
+<dt id="hopperInteractions">
+<tt class="descname">hopperInteractions</tt><a class="headerlink" href="#hopperInteractions" title="Permalink to this definition">¶</a></dt>
+<dd>(1, 0)
+Turns on carrier-carrier Coulombic interactions.
+Currently only enabled for the <a title="mode" class="reference internal" href="#mode"><tt class="xref docutils literal"><span class="pre">fet</span></tt></a> and <a title="mode" class="reference internal" href="#mode"><tt class="xref docutils literal"><span class="pre">regenerate</span></tt></a> modes.</dd></dl>
+
+<dl class="attribute">
+<dt id="maxRuns">
+<tt class="descname">maxRuns</tt><a class="headerlink" href="#maxRuns" title="Permalink to this definition">¶</a></dt>
+<dd>(<a title="mode" class="reference internal" href="#mode"><tt class="xref docutils literal"><span class="pre">tof</span></tt></a> or <a title="mode" class="reference internal" href="#mode"><tt class="xref docutils literal"><span class="pre">regenerate</span></tt></a> modes only).
+The maximum number of runs.
+If the mobility hasn&#8217;t converged within maxRuns, the simulation will be truncated.</dd></dl>
+
+<dl class="attribute">
+<dt id="maxTime">
+<tt class="descname">maxTime</tt><a class="headerlink" href="#maxTime" title="Permalink to this definition">¶</a></dt>
+<dd><p>The maximum time of simulation (s).
+Simulations will be truncated at maxTime unless they have already converged.</p>
+<p>See also section <a class="reference external" href="../documentation/time.html#sec-time"><em>Time in ToFeT</em></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mode">
+<tt class="descname">mode</tt><a class="headerlink" href="#mode" title="Permalink to this definition">¶</a></dt>
+<dd>(<a title="mode" class="reference internal" href="#mode"><tt class="xref docutils literal"><span class="pre">tof</span></tt></a>, <a title="mode" class="reference internal" href="#mode"><tt class="xref docutils literal"><span class="pre">regenerate</span></tt></a>, <a title="mode" class="reference internal" href="#mode"><tt class="xref docutils literal"><span class="pre">fet</span></tt></a>)
+By default protect_me simulates the time-of-flight experiment in which charges are removed from the simulation whenever they are collected.
+However, protect_me can also run in the <a title="mode" class="reference internal" href="#mode"><tt class="xref docutils literal"><span class="pre">regenerate</span></tt></a> mode where, every time a charge is collected, another is immediately <tt class="xref docutils literal"><span class="pre">regenerate</span> </tt> mode.</dd></dl>
+
+<dl class="attribute">
+<dt id="movesCycle">
+<tt class="descname">movesCycle</tt><a class="headerlink" href="#movesCycle" title="Permalink to this definition">¶</a></dt>
+<dd>(<a title="mode" class="reference internal" href="#mode"><tt class="xref docutils literal"><span class="pre">fet</span></tt></a> mode only).
+Convergence is checked every movesCycle Monte Carlo steps.  Defaults to 2e4.
+See also cyclesForConvergence.</dd></dl>
+
+<dl class="attribute">
+<dt id="printOccupation">
+<tt class="descname">printOccupation</tt><a class="headerlink" href="#printOccupation" title="Permalink to this definition">¶</a></dt>
+<dd>(1, 0)
+If 1, print the occupation probabilities of each molecule (see section~ref{sec:use}).
+textbf{Note:} to get occupation probabilities you also need to use the binary protect_meOccupation.</dd></dl>
+
+<dl class="attribute">
+<dt id="printVertices">
+<tt class="descname">printVertices</tt><a class="headerlink" href="#printVertices" title="Permalink to this definition">¶</a></dt>
+<dd>(1,0)
+If 1, print the details of each molecule.</dd></dl>
+
+<dl class="attribute">
+<dt id="printEdges">
+<tt class="descname">printEdges</tt><a class="headerlink" href="#printEdges" title="Permalink to this definition">¶</a></dt>
+<dd>(1,0)
+If 1, print the details of all intermolecular interactions.
+Warning, not fully tested.</dd></dl>
+
+<dl class="attribute">
+<dt id="reorg">
+<tt class="descname">reorg</tt><a class="headerlink" href="#reorg" title="Permalink to this definition">¶</a></dt>
+<dd>The reorganisation energy (eV)</dd></dl>
+
+<dl class="attribute">
+<dt id="siteEnergies">
+<tt class="descname">siteEnergies</tt><a class="headerlink" href="#siteEnergies" title="Permalink to this definition">¶</a></dt>
+<dd>(1,0)
+By default protect_me expects $Delta E$ in your edge file, unless you are in <a title="mode" class="reference internal" href="#mode"><tt class="xref docutils literal"><span class="pre">fet</span></tt></a> mode or have activated hopperInteractions.
+However, if you are providing site energies (E) in your .xyz file instead, you must specify siteEnergies 1 in your .sim file.
+Site energies must be provided for <a title="mode" class="reference internal" href="#mode"><tt class="xref docutils literal"><span class="pre">fet</span></tt></a> and for <a title="mode" class="reference internal" href="#mode"><tt class="xref docutils literal"><span class="pre">regenerate</span></tt></a> simulations when hopperInteractions are on.</dd></dl>
+
+<dl class="attribute">
+<dt id="temp">
+<tt class="descname">temp</tt><a class="headerlink" href="#temp" title="Permalink to this definition">¶</a></dt>
+<dd>The temperature (K)</dd></dl>
+
+<dl class="attribute">
+<dt id="tol">
+<tt class="descname">tol</tt><a class="headerlink" href="#tol" title="Permalink to this definition">¶</a></dt>
+<dd>Stop the simulation when the fractional change in the mobility~/~current is between <tt class="docutils literal"><span class="pre">1-tol</span></tt> and <tt class="docutils literal"><span class="pre">1+tol</span></tt>.
+track (1,0)
+Track each hop of each hopper.
+Must be used in conjunction with the executable protect_meOccupation.</dd></dl>
+
+<dl class="attribute">
+<dt id="Vds">
+<tt class="descname">Vds</tt><a class="headerlink" href="#Vds" title="Permalink to this definition">¶</a></dt>
+<dd>(<a title="mode" class="reference internal" href="#mode"><tt class="xref docutils literal"><span class="pre">fet</span></tt></a> mode only).
+The source-drain voltage (qV), where q=$pm$1 for holes / electrons.
+As for fieldZ, no adjustment has to be made to Vds to switch from simulating holes to simulating electrons since q is contained in the units; in both cases both drift along z for negative Vds.</dd></dl>
+
+<dl class="attribute">
+<dt id="Vg">
+<tt class="descname">Vg</tt><a class="headerlink" href="#Vg" title="Permalink to this definition">¶</a></dt>
+<dd>(<a title="mode" class="reference internal" href="#mode"><tt class="xref docutils literal"><span class="pre">fet</span></tt></a> mode only).
+The gate voltage (qV), where q=$pm$1 for holes / electrons.
+As for Vds, no adjustment has to be made for holes / electrons; in both cases charges are drawn into the channel by positive Vg.</dd></dl>
+
+<dl class="attribute">
+<dt id="verbosity">
+<tt class="descname">verbosity</tt><a class="headerlink" href="#verbosity" title="Permalink to this definition">¶</a></dt>
+<dd>(high, low)
+By default the verbosity of the output is low; set to high if you want more runtime information.</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../modindex.html" title="Global Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="glossary.html" title="3.3. Glossary"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="tft_run_batch.py.html" title="3.1.9. tft_run_batch.py"
+             >previous</a> |</li>
+        <li><a href="../index.html">ToFeT v2.1.83 documentation</a> &raquo;</li>
+          <li><a href="../master_toc.html" >5. Full table of contents</a> &raquo;</li>
+          <li><a href="reference.html" >3. Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2009, Joe Kwiatkowski.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.1.
+    </div>
+  </body>
+</html>

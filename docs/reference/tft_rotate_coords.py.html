@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>3.1.8. tft_rotate_coords.py &mdash; ToFeT v2.1.83 documentation</title>
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.1.83',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="ToFeT v2.1.83 documentation" href="../index.html" />
+    <link rel="up" title="3.1. Scripts" href="scripts.html" />
+    <link rel="next" title="3.1.9. tft_run_batch.py" href="tft_run_batch.py.html" />
+    <link rel="prev" title="3.1.7. tft_plot_pf.py" href="tft_plot_pf.py.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../modindex.html" title="Global Module Index"
+             accesskey="M">modules</a> |</li>
+        <li class="right" >
+          <a href="tft_run_batch.py.html" title="3.1.9. tft_run_batch.py"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="tft_plot_pf.py.html" title="3.1.7. tft_plot_pf.py"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">ToFeT v2.1.83 documentation</a> &raquo;</li>
+          <li><a href="../master_toc.html" >5. Full table of contents</a> &raquo;</li>
+          <li><a href="reference.html" >3. Reference</a> &raquo;</li>
+          <li><a href="scripts.html" accesskey="U">3.1. Scripts</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/Alq3_filaments_small.png" alt="Logo"/>
+            </a></p>
+            <h3><a href="../index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="">3.1.8. <tt class="docutils literal"><span class="pre">tft_rotate_coords.py</span></tt></a><ul>
+<li><a class="reference external" href="#command-line-usage">3.1.8.1. Command-line usage</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="tft_plot_pf.py.html"
+                                  title="previous chapter">3.1.7. <tt class="docutils literal docutils literal docutils literal"><span class="pre">tft_plot_pf.py</span></tt></a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="tft_run_batch.py.html"
+                                  title="next chapter">3.1.9. <tt class="docutils literal docutils literal"><span class="pre">tft_run_batch.py</span></tt></a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="../_sources/reference/tft_rotate_coords.py.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="../search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="tft-rotate-coords-py">
+<span id="module-tft_rotate_coords"></span><h1>3.1.8. <tt class="xref docutils literal"><span class="pre">tft_rotate_coords.py</span></tt><a class="headerlink" href="#tft-rotate-coords-py" title="Permalink to this headline">¶</a></h1>
+<p><em>Module author: Joe Kwiatkowski</em></p>
+<p>Rotates <a class="reference external" href="glossary.html#term-xyz-file"><em class="xref">xyz file</em></a> to align Z-axis perpendicular to a unit cell face.</p>
+<div class="section" id="command-line-usage">
+<h2>3.1.8.1. Command-line usage<a class="headerlink" href="#command-line-usage" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre>tft_rotate_coords.py   XYZ  CELL  CROSS_PRODUCT
+</pre></div>
+</div>
+<p>where <em>XYZ</em> is the <a class="reference external" href="glossary.html#term-xyz-file"><em class="xref">XYZ file</em></a> (that must end with the 
+suffix <em>.xyz</em>), <em>CELL</em> is a 
+file containing the dimensions of the morphology (and must end with the 
+suffix <em>.cell</em>).</p>
+<p>The format of the <em>CELL</em> file is:</p>
+<div class="highlight-python"><pre>a       b       c  
+alpha   beta    gamma</pre>
+</div>
+<p>where the first line relates to the length of your primitive basis vectors
+(arbitrary units), and the second line the angles between them (in degrees).
+For a rectangular lattice this would simply be:</p>
+<div class="highlight-python"><pre>a       b       c  
+90      90      90</pre>
+</div>
+<p>The input cross_product is the vector cross product that defines the
+direction you want the field to point along.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">It is only physical to apply the electric field perpendicular to 
+the faces of your cell.</p>
+</div>
+<dl class="docutils">
+<dt>The allowed values of cross_product </dt>
+<dd>are <em>aXb</em>, <em>aXc</em>, <em>bXa</em>, <em>bXc</em>, <em>cXa</em>, <em>cXb</em>.</dd>
+</dl>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../modindex.html" title="Global Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="tft_run_batch.py.html" title="3.1.9. tft_run_batch.py"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="tft_plot_pf.py.html" title="3.1.7. tft_plot_pf.py"
+             >previous</a> |</li>
+        <li><a href="../index.html">ToFeT v2.1.83 documentation</a> &raquo;</li>
+          <li><a href="../master_toc.html" >5. Full table of contents</a> &raquo;</li>
+          <li><a href="reference.html" >3. Reference</a> &raquo;</li>
+          <li><a href="scripts.html" >3.1. Scripts</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2009, Joe Kwiatkowski.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.1.
+    </div>
+  </body>
+</html>

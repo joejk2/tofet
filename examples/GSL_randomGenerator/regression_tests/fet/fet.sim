@@ -1,0 +1,16 @@
+reorg 0.132
+Vds -1
+Vg 0.3
+temp 300
+maxTime 1e-10
+tol 0.5
+printOccupation 1
+printEnergies 1
+mode fet
+siteEnergies 1
+hopperInteractions 1
+printEnergies 1
+dielectric 4.4
+converged 1
+movesCycle 2e4
+verbosity low

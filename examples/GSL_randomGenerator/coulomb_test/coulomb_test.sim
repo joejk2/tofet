@@ -1,0 +1,14 @@
+reorg 0.132	
+temp 300.0	
+fieldZ 0.0 
+hoppers 2		    
+maxTime 5e-8     
+deltaTime 1e-8	
+alpha 1.5		
+maxRuns 1           
+tol 1e-10      
+mode regenerate 
+hopperInteractions 1
+printOccupation 1
+dielectric 4.4
+verbosity low

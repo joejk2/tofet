@@ -1,0 +1,14 @@
+Coulombic interactions
+=========================
+
+:file:`trunk/examples/GSL_randomGenerator/coulomb\test/`
+
+.. warning:: 
+    Documentation incomplete
+    Give me a :doc:`kick </contact>`, and I'll fill this section in.
+
+Coulombic interactions between hoppers can be handled by ToFeT in the :attr:`regenerate <mode>` and :attr:`fet <mode>` mode.
+In the latter case, these interactions are activated by default.
+In the former case, you can activate the interactions by setting :attr:`hopperInteractions` 1 in your :ref:`sim file <sec_sim_file>`.
+If you do so, you need to provide :term:`site energies <site energy>` in your :ref:`xyz file <sec_xyz_file>` rather than :term:`DE` in your :ref:`edge file <sec_edge_file>` (because the meaning of :term:`DE` is vague when Coulombic interactions are included).
+

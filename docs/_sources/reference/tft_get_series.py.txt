@@ -1,0 +1,2 @@
+.. automodule:: tft_get_series
+    :synopsis: Extract a data series from a ToFeT output file.

@@ -1,0 +1,21 @@
+Input files
+=======================
+
+.. toctree::
+    
+    xyz_file
+    edge_file
+    sim_file
+
+ToFeT takes three input files:
+
+:doc:`wonderful_morphology.xyz <xyz_file>`
+    describing the placement of each molecule in the film.
+:doc:`fast.edge <edge_file>`
+    describing the interactions between neighbouring molecules.
+:doc:`foo.sim <sim_file>`
+    containing all the simulation parameters.
+
+Your input files may have any prefix, but they must end in the correct suffix.
+Each file contains a number of columns, each of which is delimited by any amount of blank space.
+

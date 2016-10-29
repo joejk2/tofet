@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>7. Changes &mdash; ToFeT v2.1.83 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '2.1.83',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="ToFeT v2.1.83 documentation" href="index.html" />
+    <link rel="prev" title="6.3. COPYING.LESSER" href="COPYING.LESSER.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="modindex.html" title="Global Module Index"
+             accesskey="M">modules</a> |</li>
+        <li class="right" >
+          <a href="COPYING.LESSER.html" title="6.3. COPYING.LESSER"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">ToFeT v2.1.83 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/Alq3_filaments_small.png" alt="Logo"/>
+            </a></p>
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="COPYING.LESSER.html"
+                                  title="previous chapter">6.3. COPYING.LESSER</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="_sources/CHANGES.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="changes">
+<h1>7. Changes<a class="headerlink" href="#changes" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-python"><pre>-------------------------------------------------------------------------------
+2.021 --&gt;&gt; 2.083
+
+Contributing authors: Joe Kwiatkowski
+-------------------------------------------------------------------------------
+
+!!! WARNING !!!: The names of the scripts and the binaries have changed.  
+                 See below...
+
+* By default, Makefile now generates the binaries 'tft' and 'tft_occ' in place of 
+  'tofet' and 'tofetOccupation'
+* usefulScripts/ moved to scripts/ 
+* Names of usefulScripts changed:
+    makeCubicLattice.py -&gt; tft_make_cubic_lattice.py 
+    calculateSaturatedMobility.py -&gt; tft_sat_mu.py
+    getSeries.py -&gt; tft_get_series.py
+    averageXY.py -&gt; tft_average_xy.py 
+    mkCollectorsGenerators.py -&gt; tft_define_types.py
+    getValues.py -&gt; tft_get_values.py
+    plotPF.py -&gt; tft_plot_pf.py
+    rotateCoords.py -&gt; tft_rotate_coords.py
+    calculateElectrochemicalPotential.py -&gt; tft_calc_ecp.py
+* tft_define_types.py (previously mkCollectorsGenerators.py) can now define the 
+collection and generation regions of xyz files that contain site energies.  
+Type 'tft_define_types.py --help' for usage. 
+* Updated documentation
+* Loads of regression_tests added to examples/GSL*/regression_tests
+</pre>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="modindex.html" title="Global Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="COPYING.LESSER.html" title="6.3. COPYING.LESSER"
+             >previous</a> |</li>
+        <li><a href="index.html">ToFeT v2.1.83 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2009, Joe Kwiatkowski.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.1.
+    </div>
+  </body>
+</html>

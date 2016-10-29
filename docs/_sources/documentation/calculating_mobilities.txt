@@ -1,0 +1,47 @@
+.. _sec_mu:
+
+Calculating mobilities
+============================
+
+.. _sec_velocity_mu:
+
+Mobilities from average velocity
+---------------------------------
+As each charge is collected, it's velocity in the direction of :attr:`fieldZ` is calculated.  The mobility is calculated from the average velocity.  Charges that aren't collected don't contribute to the mobility:
+
+.. math::
+    \mu = \frac{L}{F} \cdot \left< \frac{1}{t} \right>_{collected hoppers}
+
+where *L* is the depth of the film along the Z-axis, *F* is the field and *t* is the time at which a hopper is collected.
+
+This mobility is labelled as ``MOBILITY FROM COLLECTION TIMES`` in ToFeT's output.
+
+.. _sec_convergence:
+
+Convergence
+^^^^^^^^^^^^^
+ToFeT uses the :ref:`sec_velocity_mu` to determine when the simulation has converged (as defined by :attr:`tol`).
+If :attr:`maxTime` isn't sufficiently large and some charges aren't being collected, or if the mobility isn't well converged from all :term:`runs <run>`, ToFeT will issue warnings.
+Depending on these warnings, :attr:`maxTime` or :attr:`maxRuns` should be increased.
+Alternatively, :attr:`tol` could also be increased.
+
+
+.. _sec_displacement_mu:
+
+Mobilities from average displacement
+-------------------------------------
+The aggregate distance moved by all charges along the field is used to calculate a velocity, and hence mobility.  All charges, even those that aren't collected, contribute to this value.
+
+.. math::
+    \mu = \frac{1}{T \cdot F} \left< \Delta Z \right>_{all hoppers}
+
+where *Delta Z* is the total distance moved by a hopper along the Z-axis, and *T* is the total time of the simulation (aggregated over all runs).
+
+This mobility is labelled as ``MOBILITY FROM TOTAL DISPLACEMENT AND TOTAL TIME`` in ToFeT's output.
+
+
+Field-effect mobilities
+----------------------------
+
+.. note:: To be written....   Give me a :doc:`kick </contact>`.
+

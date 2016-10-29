@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>3.1.1. tft_average_xy.py &mdash; ToFeT v2.1.83 documentation</title>
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.1.83',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="ToFeT v2.1.83 documentation" href="../index.html" />
+    <link rel="up" title="3.1. Scripts" href="scripts.html" />
+    <link rel="next" title="3.1.2. tft_calc_ecp.py" href="tft_calc_ecp.py.html" />
+    <link rel="prev" title="3.1. Scripts" href="scripts.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../modindex.html" title="Global Module Index"
+             accesskey="M">modules</a> |</li>
+        <li class="right" >
+          <a href="tft_calc_ecp.py.html" title="3.1.2. tft_calc_ecp.py"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="scripts.html" title="3.1. Scripts"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">ToFeT v2.1.83 documentation</a> &raquo;</li>
+          <li><a href="../master_toc.html" >5. Full table of contents</a> &raquo;</li>
+          <li><a href="reference.html" >3. Reference</a> &raquo;</li>
+          <li><a href="scripts.html" accesskey="U">3.1. Scripts</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/Alq3_filaments_small.png" alt="Logo"/>
+            </a></p>
+            <h3><a href="../index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="">3.1.1. <tt class="docutils literal"><span class="pre">tft_average_xy.py</span></tt></a><ul>
+<li><a class="reference external" href="#command-line-usage">3.1.1.1. Command-line usage</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="scripts.html"
+                                  title="previous chapter">3.1. Scripts</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="tft_calc_ecp.py.html"
+                                  title="next chapter">3.1.2. <tt class="docutils literal"><span class="pre">tft_calc_ecp.py</span></tt></a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="../_sources/reference/tft_average_xy.py.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="../search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-tft_average_xy">
+<h1>3.1.1. <tt class="xref docutils literal"><span class="pre">tft_average_xy.py</span></tt><a class="headerlink" href="#module-tft_average_xy" title="Permalink to this headline">¶</a></h1>
+<p><em>Module author: Joe Kwiatkowski</em></p>
+<p>Take some four-dimensional dataset <em>(X, Y, Z, VALUE)</em>.  
+Divide the dataset into bins along the <em>Z</em> axis and calculate the average
+<em>&lt;VALUE&gt;</em> for each bin.
+Return <em>(Z, &lt;VALUE&gt;)</em>, where <em>Z</em> is the lower bound of the bin.</p>
+<div class="section" id="command-line-usage">
+<h2>3.1.1.1. Command-line usage<a class="headerlink" href="#command-line-usage" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre>tft_average_xy.py  DATASET  BINS
+</pre></div>
+</div>
+<p>where <em>BINS</em> is the number of bins into which the data is partitioned along the
+<em>Z</em>-axis.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../modindex.html" title="Global Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="tft_calc_ecp.py.html" title="3.1.2. tft_calc_ecp.py"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="scripts.html" title="3.1. Scripts"
+             >previous</a> |</li>
+        <li><a href="../index.html">ToFeT v2.1.83 documentation</a> &raquo;</li>
+          <li><a href="../master_toc.html" >5. Full table of contents</a> &raquo;</li>
+          <li><a href="reference.html" >3. Reference</a> &raquo;</li>
+          <li><a href="scripts.html" >3.1. Scripts</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2009, Joe Kwiatkowski.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.1.
+    </div>
+  </body>
+</html>

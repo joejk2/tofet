@@ -1,0 +1,46 @@
+Taking input from tmp.sim, scl.xyz, scl.edge ...
+Read simulation parameters ...
+  : reorg 0.132
+  : temp 250.0
+  : fieldZ -1e-2
+  : hoppers 1
+  : maxTime 1e-9
+  : deltaTime 1e-15
+  : alpha 1.5
+  : tol 1e-4
+  : 
+Setting up GSL random number generator...
+	Generator type: mt19937
+	Seed = 0
+Read in 12500 vertices from scl.xyz
+Read in 32475 edges from scl.edge
+All systems go!  Beginning KMC...
+.................................
+.................................
+Mobility converged
+Simulation finished with 0 warnings
+.................................
+.................................
+> PHOTOCURRENT TRANSIENT
+	time (s)	-	current (A)
+	1e-15		9.31125e-06
+	1.5e-15		7.70586e-06
+	2.25e-15		1.2415e-05
+	3.375e-15		9.98908e-06
+	5.0625e-15		1.02745e-05
+	7.59375e-15		1.01476e-05
+	1.13906e-14		1.04859e-05
+	1.70859e-14		9.24562e-06
+	2.56289e-14		1.011e-05
+	3.84434e-14		1.13253e-05
+	5.7665e-14		1.09578e-05
+	8.64976e-14		1.10246e-05
+	1.29746e-13		1.07722e-05
+	1.9462e-13		1.0839e-05
+	2.91929e-13		1.05684e-05
+	4.37894e-13		1.05057e-05
+> TOTAL RUNS = 48
+> MOBILITY FROM COLLECTION TIMES (cm^2/V.s)= 46.0042
+> MOBILITY FROM TOTAL DISPLACEMENT AND TOTAL TIME (cm^2/V.s)= 45.7813
+> AVERAGE NUMBER OF HOPPERS COLLECTED PER RUN = 1
+> PROBABILITY OF HOPPER BEING COLLECTED DURING RUN = 1

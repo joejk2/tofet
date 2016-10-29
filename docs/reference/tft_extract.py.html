@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>3.1.5. tft_extract.py &mdash; ToFeT v2.1.83 documentation</title>
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.1.83',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="ToFeT v2.1.83 documentation" href="../index.html" />
+    <link rel="up" title="3.1. Scripts" href="scripts.html" />
+    <link rel="next" title="3.1.6. tft_make_cubic_lattice.py" href="tft_make_cubic_lattice.py.html" />
+    <link rel="prev" title="3.1.4. tft_define_types.py" href="tft_define_types.py.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../modindex.html" title="Global Module Index"
+             accesskey="M">modules</a> |</li>
+        <li class="right" >
+          <a href="tft_make_cubic_lattice.py.html" title="3.1.6. tft_make_cubic_lattice.py"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="tft_define_types.py.html" title="3.1.4. tft_define_types.py"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">ToFeT v2.1.83 documentation</a> &raquo;</li>
+          <li><a href="../master_toc.html" >5. Full table of contents</a> &raquo;</li>
+          <li><a href="reference.html" >3. Reference</a> &raquo;</li>
+          <li><a href="scripts.html" accesskey="U">3.1. Scripts</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/Alq3_filaments_small.png" alt="Logo"/>
+            </a></p>
+            <h3><a href="../index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="">3.1.5. <tt class="docutils literal"><span class="pre">tft_extract.py</span></tt></a><ul>
+<li><a class="reference external" href="#example-use">3.1.5.1. Example use</a></li>
+<li><a class="reference external" href="#assumptions-made">3.1.5.2. Assumptions made</a><ul>
+<li><a class="reference external" href="#when-searching-for-series-of-data">3.1.5.2.1. When searching for series of data</a></li>
+<li><a class="reference external" href="#when-searching-for-single-values">3.1.5.2.2. When searching for single values</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="tft_define_types.py.html"
+                                  title="previous chapter">3.1.4. <tt class="docutils literal docutils literal docutils literal"><span class="pre">tft_define_types.py</span></tt></a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="tft_make_cubic_lattice.py.html"
+                                  title="next chapter">3.1.6. <tt class="docutils literal"><span class="pre">tft_make_cubic_lattice.py</span></tt></a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="../_sources/reference/tft_extract.py.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="../search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="tft-extract-py">
+<span id="module-tft_extract"></span><h1>3.1.5. <tt class="xref docutils literal"><span class="pre">tft_extract.py</span></tt><a class="headerlink" href="#tft-extract-py" title="Permalink to this headline">¶</a></h1>
+<p><em>Module author: Joe Kwiatkowski</em></p>
+<p>Extract data from a ToFeT output file(s).  Can return either single values, or
+entire series of data.  There are options to <tt class="xref docutils literal"><span class="pre">tft_extract.py</span></tt> to extract
+just about any data set from a ToFeT output file.</p>
+<p>For full options and usage type:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">tft_extract</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">help</span>
+</pre></div>
+</div>
+<div class="section" id="example-use">
+<h2>3.1.5.1. Example use<a class="headerlink" href="#example-use" title="Permalink to this headline">¶</a></h2>
+<p>Extract temperature and mobility from two files:</p>
+<div class="highlight-python"><pre>tft_extract.py  --temp  --mob_vel  OUTPUT_FILE_1 OUTPUT_FILE_2</pre>
+</div>
+<p>Extract the photocurrent transient from all files which match the 
+glob <tt class="docutils literal"><span class="pre">ideal_transient*.out</span></tt>:</p>
+<div class="highlight-python"><pre>tft_extract.py --transient  ideal_transient*.out</pre>
+</div>
+</div>
+<div class="section" id="assumptions-made">
+<h2>3.1.5.2. Assumptions made<a class="headerlink" href="#assumptions-made" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="when-searching-for-series-of-data">
+<h3>3.1.5.2.1. When searching for series of data<a class="headerlink" href="#when-searching-for-series-of-data" title="Permalink to this headline">¶</a></h3>
+<p>In ToFeT&#8217;s output file, series of data must have the following form:</p>
+<div class="highlight-python"><pre>... UNIQUE_HEADER ...
+... some description of the columns ...
+row_0
+row_1
+row_2
+.
+.
+.
+&gt; </pre>
+</div>
+<p>Note the final <tt class="docutils literal"><span class="pre">&gt;</span></tt>, which is necessary to tell ToFeT when the series has
+finished.   
+The <em>UNIQUE_HEADER</em> (or enough of it to make it unique)</p>
+<blockquote>
+must be specified within this module source.</blockquote>
+</div>
+<div class="section" id="when-searching-for-single-values">
+<h3>3.1.5.2.2. When searching for single values<a class="headerlink" href="#when-searching-for-single-values" title="Permalink to this headline">¶</a></h3>
+<p>Values must have the following form:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="o">...</span> <span class="n">UNIQUE_LINE_BEGINNING</span> <span class="o">...</span> <span class="n">value</span>
+</pre></div>
+</div>
+<p>Note that the value must be the last element of the line.  
+The <em>UNIQUE_LINE_BEGINNING</em> (or enough of it to make it unique)</p>
+<blockquote>
+must be specified within this module source.</blockquote>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../modindex.html" title="Global Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="tft_make_cubic_lattice.py.html" title="3.1.6. tft_make_cubic_lattice.py"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="tft_define_types.py.html" title="3.1.4. tft_define_types.py"
+             >previous</a> |</li>
+        <li><a href="../index.html">ToFeT v2.1.83 documentation</a> &raquo;</li>
+          <li><a href="../master_toc.html" >5. Full table of contents</a> &raquo;</li>
+          <li><a href="reference.html" >3. Reference</a> &raquo;</li>
+          <li><a href="scripts.html" >3.1. Scripts</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2009, Joe Kwiatkowski.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.2. Calculating occupation probabilities &mdash; ToFeT v2.1.83 documentation</title>
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.1.83',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="ToFeT v2.1.83 documentation" href="../index.html" />
+    <link rel="up" title="2. Examples" href="examples.html" />
+    <link rel="next" title="2.3. Tracking the motion of the charges" href="tracking.html" />
+    <link rel="prev" title="2.1. Time-of-flight simulations" href="tof_simple.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../modindex.html" title="Global Module Index"
+             accesskey="M">modules</a> |</li>
+        <li class="right" >
+          <a href="tracking.html" title="2.3. Tracking the motion of the charges"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="tof_simple.html" title="2.1. Time-of-flight simulations"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">ToFeT v2.1.83 documentation</a> &raquo;</li>
+          <li><a href="../master_toc.html" >5. Full table of contents</a> &raquo;</li>
+          <li><a href="examples.html" accesskey="U">2. Examples</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/Alq3_filaments_small.png" alt="Logo"/>
+            </a></p>
+            <h3><a href="../index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="">2.2. Calculating occupation probabilities</a><ul>
+<li><a class="reference external" href="#files">2.2.1. Files</a></li>
+<li><a class="reference external" href="#running">2.2.2. Running</a></li>
+<li><a class="reference external" href="#extracting-data">2.2.3. Extracting data</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="tof_simple.html"
+                                  title="previous chapter">2.1. Time-of-flight simulations</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="tracking.html"
+                                  title="next chapter">2.3. Tracking the motion of the charges</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="../_sources/examples/calculating_occupations.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="../search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="calculating-occupation-probabilities">
+<span id="sec-occupation-probabilities"></span><h1>2.2. Calculating occupation probabilities<a class="headerlink" href="#calculating-occupation-probabilities" title="Permalink to this headline">¶</a></h1>
+<p><tt class="docutils literal"><span class="pre">trunk/examples/GSL_randomGenerator/regenerate/</span></tt></p>
+<p>This example is run on the same molecular film as the ToF example above, but analyses where charges spend their time.</p>
+<div class="section" id="files">
+<h2>2.2.1. Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">regenerate_occ.sim</span></tt></dt>
+<dd>Simulation parameters</dd>
+<dt><tt class="docutils literal"><span class="pre">scl.xyz</span></tt></dt>
+<dd>Morphology and molecule types</dd>
+<dt><tt class="docutils literal"><span class="pre">scl_no_traps.edge</span></tt></dt>
+<dd><a class="reference external" href="../reference/glossary.html#term-j"><em class="xref">J</em></a> and <a class="reference external" href="../reference/glossary.html#term-de"><em class="xref">DE</em></a> for neighbouring molecules</dd>
+<dt><tt class="docutils literal"><span class="pre">scl_trap.edge</span></tt></dt>
+<dd>As above, but where molecule 0 is a deep energetic trap</dd>
+<dt><tt class="docutils literal"><span class="pre">no_traps.out</span></tt></dt>
+<dd>Output files for <tt class="docutils literal"><span class="pre">scl_no_traps.edge</span></tt></dd>
+<dt><tt class="docutils literal"><span class="pre">traps.out</span></tt></dt>
+<dd>Output files for <tt class="docutils literal"><span class="pre">scl_trap.edge</span></tt></dd>
+<dt><tt class="docutils literal"><span class="pre">traps.occ</span></tt></dt>
+<dd>Just the occupation data from <tt class="docutils literal"><span class="pre">traps.out</span></tt></dd>
+</dl>
+<div align="center" class="figure">
+<img alt="../_images/Alq3_filaments.png" src="../_images/Alq3_filaments.png" style="width: 10cm;" />
+<p class="caption"><em>Charge transport through a disordered sample of  tris(8-hydroxyquinoline) aluminum (Alq3).
+Highlighted molecules are those that are visited at least once by any of 2000 holes which successively travel from the photogeneration region on the left to the collection region on the right.
+Taken from reference</em> <a class="reference external" href="../reference/bibliography.html#term-kwiatkowski-2008-pccp"><em class="xref">Kwiatkowski_2008_PCCP</em></a>.</p>
+</div>
+</div>
+<div class="section" id="running">
+<h2>2.2.2. Running<a class="headerlink" href="#running" title="Permalink to this headline">¶</a></h2>
+<p>To get occupation data, you need to use the executable <tt class="xref docutils literal"><span class="pre">tftOccupation</span></tt> (which will run marginally slower than <tt class="xref docutils literal"><span class="pre">tft</span></tt>).  Type:</p>
+<div class="highlight-python"><pre>tftOccupation scl.xyz scl_no_traps.edge regenerate_occ.sim &gt; output_file</pre>
+</div>
+<p>When run with <tt class="xref docutils literal"><span class="pre">tftOccupation</span></tt>, the occupation probabilities for each molecule are outputted at the bottom of output_file, along with the number of times that molecule was visited by a charge during the simulation.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The occupation time is summed over emphall hoppers and emphall runs, and then given as fraction of your total simulation time.
+Thus, if you have H hoppers (charges), and run the simulation for N runs, your occupation probabilities will sum to a number in the vicinity of H*N (or slightly smaller if many charges are extracted before the end of the simulation).</p>
+</div>
+<p>To make this slightly easier to deal with, this example uses the <a title="mode" class="reference external" href="../reference/sim_parameters.html#mode"><tt class="xref docutils literal"><span class="pre">regenerate</span></tt></a> mode in which, every time a charge is extracted, another is generated.
+This means you can set <a title="maxRuns" class="reference external" href="../reference/sim_parameters.html#maxRuns"><tt class="xref docutils literal"><span class="pre">maxRuns</span></tt></a> to 1 and still get good averaging (provided that <a title="tol" class="reference external" href="../reference/sim_parameters.html#tol"><tt class="xref docutils literal"><span class="pre">tol</span></tt></a> is small and <a title="maxTime" class="reference external" href="../reference/sim_parameters.html#maxTime"><tt class="xref docutils literal"><span class="pre">maxTime</span></tt></a> large).
+Since the example simulates just a single charge, all the occupation probabilities sum to 1.</p>
+</div>
+<div class="section" id="extracting-data">
+<h2>2.2.3. Extracting data<a class="headerlink" href="#extracting-data" title="Permalink to this headline">¶</a></h2>
+<p>To extract the occupation data from an output file (such as <tt class="docutils literal"><span class="pre">trap.out</span></tt>), type:</p>
+<div class="highlight-python"><pre>tft_extract.py trap.out --occ_prob &gt; trap.occ</pre>
+</div>
+<p>See <a title="Extract data from ToFeT output files." class="reference external" href="../reference/tft_extract.py.html#module-tft_extract"><tt class="xref docutils literal"><span class="pre">tft_extract</span></tt></a> for more details.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../modindex.html" title="Global Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="tracking.html" title="2.3. Tracking the motion of the charges"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="tof_simple.html" title="2.1. Time-of-flight simulations"
+             >previous</a> |</li>
+        <li><a href="../index.html">ToFeT v2.1.83 documentation</a> &raquo;</li>
+          <li><a href="../master_toc.html" >5. Full table of contents</a> &raquo;</li>
+          <li><a href="examples.html" >2. Examples</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2009, Joe Kwiatkowski.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.1.
+    </div>
+  </body>
+</html>

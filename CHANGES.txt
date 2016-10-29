@@ -1,0 +1,27 @@
+-------------------------------------------------------------------------------
+2.021 -->> 2.083
+
+Contributing authors: Joe Kwiatkowski
+-------------------------------------------------------------------------------
+
+!!! WARNING !!!: The names of the scripts and the binaries have changed.  
+                 See below...
+
+* By default, Makefile now generates the binaries 'tft' and 'tft_occ' in place of 
+  'tofet' and 'tofetOccupation'
+* usefulScripts/ moved to scripts/ 
+* Names of usefulScripts changed:
+    makeCubicLattice.py -> tft_make_cubic_lattice.py 
+    calculateSaturatedMobility.py -> tft_sat_mu.py
+    getSeries.py -> tft_get_series.py
+    averageXY.py -> tft_average_xy.py 
+    mkCollectorsGenerators.py -> tft_define_types.py
+    getValues.py -> tft_get_values.py
+    plotPF.py -> tft_plot_pf.py
+    rotateCoords.py -> tft_rotate_coords.py
+    calculateElectrochemicalPotential.py -> tft_calc_ecp.py
+* tft_define_types.py (previously mkCollectorsGenerators.py) can now define the 
+collection and generation regions of xyz files that contain site energies.  
+Type 'tft_define_types.py --help' for usage. 
+* Updated documentation
+* Loads of regression_tests added to examples/GSL*/regression_tests

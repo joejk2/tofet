@@ -1,0 +1,2 @@
+.. automodule:: tft_rotate_coords
+    :synopsis: Rotate morphologies.

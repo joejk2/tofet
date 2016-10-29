@@ -1,0 +1,10 @@
+set xlabel 'y'
+set ylabel 'z'
+set zlabel 'prob'
+set zrange[2.1e-5:2.8e-5]
+set dgrid3d 50,50
+set hidden3d
+set terminal png 
+set view 80,30
+set output "probability_surface.png"
+splot 'output.prob' u 2:3:4 w l

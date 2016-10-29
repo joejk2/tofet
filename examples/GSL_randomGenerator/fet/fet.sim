@@ -1,0 +1,13 @@
+reorg 0.132
+Vds -1 
+Vg 0.1 0.3 0.5 0.7 0.9 
+temp 300
+hoppers 0
+maxTime 1e-7 
+tol 0.05 
+mode fet
+siteEnergies 1
+hopperInteractions 1
+dielectric 4.4
+movesCycle 2e4
+verbosity low 

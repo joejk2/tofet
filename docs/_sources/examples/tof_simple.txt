@@ -1,0 +1,95 @@
+.. include:: substitutions.txt
+
+Time-of-flight simulations
+============================
+
+:file:`trunk/examples/GSL_randomGenerator/tof/`
+
+This example runs ToF simulations on a simple cubic lattice containing 12500 molecules.
+
+.. contents::
+    :local:
+
+Files
+------
+:file:`tof.sim`
+    Simulation parameters 
+:file:`scl.xyz`
+    Morphology and molecule types 
+:file:`scl.edge`
+    J and $Delta$E for neighbouring molecules 
+:file:`tof_*.out`
+    Output files for all permutations of values in tof.sim 
+:file:`tof_0.transient` 
+    A file containing just the photocurrent transient from tof_0.out 
+:file:`PF.dat`
+    A file containing the Poole-Frenkel data
+
+Running
+-------------
+In the simplest case, run:
+
+.. code-block:: bash
+
+    tft  tof.sim  scl.xyz  scl.edge  >  output_file
+
+This will runs a single simulation with the first values of each variable that is read in
+However, :file:`tof.sim` contains multiple values for the variables :attr:`fieldZ` and :attr:`temp`.
+To run ToFeT for all of these values, ensure that :file:`/trunk/scripts` is on your :envvar:`PATH`, and run::
+
+    tft_run_batch.py  tof.sim  scl.xyz  scl.edge 
+
+This will run four simulations for all permutations of all values read in, putting the output in :file:`0.out`, :file:`1.out`, :file:`2.out`, :file:`3.out`.
+
+Simulation variables
+-----------------------
+The reorganisation energy of your molecule is determined by :attr:`reorg` (in eV).
+The temperature :attr:`temp` is in K, the field along the z axis, :attr:`fieldZ` is in (V/|Ang|), and the number of hoppers (charges) in your simulation is given by :attr:`hoppers`.
+The simulation will continue running until either the time is :attr:`maxTime`, or all your charges are collected.
+The variables :attr:`alpha` and :attr:`deltaTime` do not affect the simulation in anyway, but simply determine how the photocurrent transient is stored and output; see section :ref:`sec_time`.
+
+Once :attr:`maxTime` has been exceeded, or all the hoppers have been collected, the simulation will repeat until the mobility has converged to within a fractional tolerance of :attr:`tol`.
+If you wish to limit how many such runs are made, you can specify a :attr:`maxRuns`.
+If either :attr:`maxTime` or :attr:`maxRuns` are exceeded, you will be returned warnings by ToFeT.
+
+Under the hood...
+-----------------------------
+When you run the simulation, :attr:`hoppers` charges are generated at random on any of the :term:`generators <generator>` specified in your :ref:`xyz file <sec_xyz_file>`.
+These charges then move under the influence of :attr:`fieldZ`.
+If a charge hops onto a :term:`collector` it is removed from the simulation.
+The simulation finishes when either the mobility has converged, or :attr:`maxTime` and :attr:`maxRuns` have both been exceeded.
+
+Output
+-----------------------
+After some initial details of the simulation, ToFeT will output any warnings that may have arisen.
+Following this is the photocurrent transient, the mobilities, and some other values that may be of interest.
+
+Two mobilities are given:
+
+#. :ref:`sec_velocity_mu`
+#. :ref:`sec_displacement_mu`
+
+See :ref:`sec_mu` for more information.
+
+ToFeT uses the first of these mobilities to determine when the simulation has converged.  
+If the simulation doesn't converge, you will be warned.  
+See :ref:`sec_convergence` for how to deal with this.
+
+To extract the mobility from all your output files in a format that is suitable for a Poole-Frenkel plot, type::
+
+    plotPF.py tof*.out
+
+The output is given in (V/cm)\ :sup:`1/2` *vs.* cm\ :sup:`2`/V.s.
+See :mod:`tft_plot_pf` for more details.
+
+To extract the photocurrent transients from a single output file (e.g. :file:`tof_0.out`), type::
+
+    tft_extract.py tof_0.out --transient
+
+See :mod:`tft_extract` for more details.
+
+Configuring the output
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+To adjust the resolution of the photocurrent transient, see section :ref:`sec_photocurrent_bins`.
+
+

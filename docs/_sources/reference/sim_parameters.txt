@@ -1,0 +1,139 @@
+***********************
+Simulation parameters
+***********************
+
+.. attribute:: alpha
+
+    (:attr:`tof <mode>` or :attr:`regenerate <mode>` modes only).
+
+    The geometric scaling of time bins.
+
+    See also section :ref:`sec_time`.
+
+.. attribute:: converged 
+
+    (1,0) 
+    (:attr:`fet <mode>` mode only).
+    If 1, set the hopper density as converged immediately.
+    Make sure to feed the simulation the correct distribution of hoppers in a occ file as an option to protect_me.
+
+.. attribute:: cyclesForConverence 
+
+    (1,0)
+    (:attr:`fet <mode>` only).
+    The current must be within :attr:`tol` for this many cycles for the current to be deemed converged.
+    Defaults to 15.
+    See also movesCycle
+
+.. attribute:: dielectric
+
+    (:attr:`regenerate <mode>` and :attr:`fet <mode>` modes only).  Whenever hopperInteractions are enabled (by default for :attr:`fet <mode>`), specify the dielectric constant.
+
+.. attribute:: fieldZ
+
+    The field along the z axis in qV/Ang, where q=$pm$1 for holes / electrons.
+    protect_me always expects charges to drift along the z axis.
+    In a normal setup the generators are at small z's and the collectors are at large z's.
+    In this case fieldZ must be negative so that charges move in a positive direction along z.
+    textbf{Note:} because q is contained within this definition of the field, no adjustment to fieldZ has to be made between hole and electron simulations: both drift along z for negative fieldZ's.
+
+.. attribute:: deltaTime
+
+    (:attr:`tof <mode>` or :attr:`regenerate <mode>` modes only).
+    The width of the first time bin used to store transient current events (see section~ref{sec::attr:`tof <mode>`:configuring}).
+
+    See also section :ref:`sec_time`.
+
+.. attribute:: hoppers
+
+    (:attr:`tof <mode>` or :attr:`regenerate <mode>` mode only).
+    The number of hoppers (charges).
+
+.. attribute:: hopperInteractions 
+
+    (1, 0)
+    Turns on carrier-carrier Coulombic interactions.
+    Currently only enabled for the :attr:`fet <mode>` and :attr:`regenerate <mode>` modes.
+
+.. attribute:: maxRuns
+
+    (:attr:`tof <mode>` or :attr:`regenerate <mode>` modes only).
+    The maximum number of runs.
+    If the mobility hasn't converged within maxRuns, the simulation will be truncated.
+
+.. attribute:: maxTime
+
+    The maximum time of simulation (s).
+    Simulations will be truncated at maxTime unless they have already converged.
+
+    See also section :ref:`sec_time`.
+
+.. attribute:: mode 
+
+    (:attr:`tof <mode>`, :attr:`regenerate <mode>`, :attr:`fet <mode>`)
+    By default protect_me simulates the time-of-flight experiment in which charges are removed from the simulation whenever they are collected.
+    However, protect_me can also run in the :attr:`regenerate <mode>` mode where, every time a charge is collected, another is immediately :attr:`regenerate <mode>`d.
+    protect_me can also simulate field-effect transistors in the :attr:`fet <mode>` mode.
+
+.. attribute:: movesCycle 
+
+    (:attr:`fet <mode>` mode only).
+    Convergence is checked every movesCycle Monte Carlo steps.  Defaults to 2e4.
+    See also cyclesForConvergence.
+
+.. attribute:: printOccupation 
+
+    (1, 0)
+    If 1, print the occupation probabilities of each molecule (see section~ref{sec:use}).
+    textbf{Note:} to get occupation probabilities you also need to use the binary protect_meOccupation.
+
+.. attribute:: printVertices 
+    
+    (1,0)
+    If 1, print the details of each molecule.
+
+.. attribute:: printEdges
+    
+    (1,0)
+    If 1, print the details of all intermolecular interactions.
+    Warning, not fully tested.
+
+.. attribute:: reorg
+    
+    The reorganisation energy (eV)
+
+.. attribute:: siteEnergies
+
+    (1,0)
+    By default protect_me expects $Delta E$ in your edge file, unless you are in :attr:`fet <mode>` mode or have activated hopperInteractions.
+    However, if you are providing site energies (E) in your .xyz file instead, you must specify siteEnergies 1 in your .sim file.
+    Site energies must be provided for :attr:`fet <mode>` and for :attr:`regenerate <mode>` simulations when hopperInteractions are on.
+
+.. attribute:: temp
+
+    The temperature (K)
+
+.. attribute:: tol
+
+    Stop the simulation when the fractional change in the mobility~/~current is between ``1-tol`` and ``1+tol``.
+    track (1,0)
+    Track each hop of each hopper.
+    Must be used in conjunction with the executable protect_meOccupation.
+
+.. attribute:: Vds
+
+    (:attr:`fet <mode>` mode only).
+    The source-drain voltage (qV), where q=$pm$1 for holes / electrons.
+    As for fieldZ, no adjustment has to be made to Vds to switch from simulating holes to simulating electrons since q is contained in the units; in both cases both drift along z for negative Vds.
+
+.. attribute:: Vg
+
+    (:attr:`fet <mode>` mode only).
+    The gate voltage (qV), where q=$pm$1 for holes / electrons.
+    As for Vds, no adjustment has to be made for holes / electrons; in both cases charges are drawn into the channel by positive Vg.
+
+.. attribute:: verbosity 
+
+    (high, low)
+    By default the verbosity of the output is low; set to high if you want more runtime information.
+

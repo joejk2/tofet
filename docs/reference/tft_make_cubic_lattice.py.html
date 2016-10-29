@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>3.1.6. tft_make_cubic_lattice.py &mdash; ToFeT v2.1.83 documentation</title>
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.1.83',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="ToFeT v2.1.83 documentation" href="../index.html" />
+    <link rel="up" title="3.1. Scripts" href="scripts.html" />
+    <link rel="next" title="3.1.7. tft_plot_pf.py" href="tft_plot_pf.py.html" />
+    <link rel="prev" title="3.1.5. tft_extract.py" href="tft_extract.py.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../modindex.html" title="Global Module Index"
+             accesskey="M">modules</a> |</li>
+        <li class="right" >
+          <a href="tft_plot_pf.py.html" title="3.1.7. tft_plot_pf.py"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="tft_extract.py.html" title="3.1.5. tft_extract.py"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">ToFeT v2.1.83 documentation</a> &raquo;</li>
+          <li><a href="../master_toc.html" >5. Full table of contents</a> &raquo;</li>
+          <li><a href="reference.html" >3. Reference</a> &raquo;</li>
+          <li><a href="scripts.html" accesskey="U">3.1. Scripts</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/Alq3_filaments_small.png" alt="Logo"/>
+            </a></p>
+            <h3><a href="../index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="">3.1.6. <tt class="docutils literal"><span class="pre">tft_make_cubic_lattice.py</span></tt></a><ul>
+<li><a class="reference external" href="#command-line-usage">3.1.6.1. Command-line usage</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="tft_extract.py.html"
+                                  title="previous chapter">3.1.5. <tt class="docutils literal docutils literal docutils literal"><span class="pre">tft_extract.py</span></tt></a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="tft_plot_pf.py.html"
+                                  title="next chapter">3.1.7. <tt class="docutils literal"><span class="pre">tft_plot_pf.py</span></tt></a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="../_sources/reference/tft_make_cubic_lattice.py.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="../search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="tft-make-cubic-lattice-py">
+<span id="module-tft_make_cubic_lattice"></span><h1>3.1.6. <tt class="xref docutils literal"><span class="pre">tft_make_cubic_lattice.py</span></tt><a class="headerlink" href="#tft-make-cubic-lattice-py" title="Permalink to this headline">¶</a></h1>
+<p><em>Module author: Joe Kwiatkowski</em></p>
+<p>Make a cubic lattice, outputting <a class="reference external" href="glossary.html#term-xyz-file"><em class="xref">XYZ</em></a> and <a class="reference external" href="glossary.html#term-edge-file"><em class="xref">edge</em></a>
+files.</p>
+<div class="section" id="command-line-usage">
+<h2>3.1.6.1. Command-line usage<a class="headerlink" href="#command-line-usage" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre>tft_make_cubic_lattice.py  XMAX  YMAX  ZMAX  COL_GEN  J  DE
+</pre></div>
+</div>
+<p>where <em>(XMAX, YMAX, ZMAX)</em> are the maximum dimensions of the sample,
+<a class="reference external" href="glossary.html#term-col-gen"><em class="xref">COL_GEN</em></a>
+is the fraction of the film which is used for collection and generation,
+<a class="reference external" href="glossary.html#term-j"><em class="xref">J</em></a> is
+the <a class="reference external" href="glossary.html#term-transfer-integral"><em class="xref">transfer integral</em></a> between <a class="reference external" href="glossary.html#term-vertex"><em class="xref">vertices</em></a>, and <a class="reference external" href="glossary.html#term-de"><em class="xref">DE</em></a> is the difference in energies
+of <a class="reference external" href="glossary.html#term-vertex"><em class="xref">vertices</em></a>.</p>
+<p>Currently, only supports the format in which energies are placed in the
+<a class="reference external" href="glossary.html#term-edge-file"><em class="xref">edge file</em></a></p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../modindex.html" title="Global Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="tft_plot_pf.py.html" title="3.1.7. tft_plot_pf.py"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="tft_extract.py.html" title="3.1.5. tft_extract.py"
+             >previous</a> |</li>
+        <li><a href="../index.html">ToFeT v2.1.83 documentation</a> &raquo;</li>
+          <li><a href="../master_toc.html" >5. Full table of contents</a> &raquo;</li>
+          <li><a href="reference.html" >3. Reference</a> &raquo;</li>
+          <li><a href="scripts.html" >3.1. Scripts</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2009, Joe Kwiatkowski.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.1.
+    </div>
+  </body>
+</html>

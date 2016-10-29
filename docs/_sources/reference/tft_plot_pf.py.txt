@@ -1,0 +1,2 @@
+.. automodule:: tft_plot_pf
+    :synopsis:  Extract data suitable for a Poole-Frenkel plot.

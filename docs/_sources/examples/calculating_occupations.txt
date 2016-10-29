@@ -1,0 +1,60 @@
+.. _sec_occupation_probabilities:
+
+Calculating occupation probabilities
+======================================
+:file:`trunk/examples/GSL_randomGenerator/regenerate/`
+
+This example is run on the same molecular film as the ToF example above, but analyses where charges spend their time.
+
+Files
+---------
+:file:`regenerate_occ.sim`
+    Simulation parameters 
+:file:`scl.xyz` 
+    Morphology and molecule types 
+:file:`scl_no_traps.edge`
+    :term:`J` and :term:`DE` for neighbouring molecules 
+:file:`scl_trap.edge`
+    As above, but where molecule 0 is a deep energetic trap  
+:file:`no_traps.out`
+    Output files for :file:`scl_no_traps.edge`
+:file:`traps.out`
+    Output files for :file:`scl_trap.edge`
+:file:`traps.occ`
+    Just the occupation data from :file:`traps.out`
+
+.. figure:: /images/Alq3_filaments.png
+    :width: 10cm
+    :align: center
+
+    *Charge transport through a disordered sample of  tris(8-hydroxyquinoline) aluminum (Alq3).
+    Highlighted molecules are those that are visited at least once by any of 2000 holes which successively travel from the photogeneration region on the left to the collection region on the right.  
+    Taken from reference* :term:`Kwiatkowski_2008_PCCP`.
+
+
+Running
+--------------
+To get occupation data, you need to use the executable :mod:`tftOccupation` (which will run marginally slower than :mod:`tft`).  Type::
+
+    tftOccupation scl.xyz scl_no_traps.edge regenerate_occ.sim > output_file
+
+When run with :mod:`tftOccupation`, the occupation probabilities for each molecule are outputted at the bottom of output_file, along with the number of times that molecule was visited by a charge during the simulation.
+
+.. note:: 
+    The occupation time is summed over emphall hoppers and emphall runs, and then given as fraction of your total simulation time.
+    Thus, if you have H hoppers (charges), and run the simulation for N runs, your occupation probabilities will sum to a number in the vicinity of H*N (or slightly smaller if many charges are extracted before the end of the simulation).
+
+To make this slightly easier to deal with, this example uses the :attr:`regenerate <mode>` mode in which, every time a charge is extracted, another is generated.
+This means you can set :attr:`maxRuns` to 1 and still get good averaging (provided that :attr:`tol` is small and :attr:`maxTime` large).
+Since the example simulates just a single charge, all the occupation probabilities sum to 1.
+
+
+Extracting data
+-------------------
+To extract the occupation data from an output file (such as :file:`trap.out`), type::
+
+    tft_extract.py trap.out --occ_prob > trap.occ
+
+See :mod:`tft_extract` for more details.
+
+
